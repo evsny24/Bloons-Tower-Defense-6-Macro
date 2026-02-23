@@ -1,5 +1,5 @@
 # BTD6-Collection-Event-Macro
-This is an autohotkey macro program that will farm the collection events automatically.
+This is an autohotkey macro program that automates the gameplay of Bloons Tower Defense 6. It's main focus is completing expert maps on the hardest difficulty to gain the most amount of currency, especially during collection events where it will target bonus maps to get the maximum rewards.
 
 # REQUIREMENTS TO RUN:
 
