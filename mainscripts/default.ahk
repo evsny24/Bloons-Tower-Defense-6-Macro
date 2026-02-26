@@ -262,14 +262,20 @@ resetfailsafe()
 			sleep 1000
 			ImageSearch, x, y, 0, 0, 2560, 1440, *30 .\assets\failhome.png
 			click, %x% %y%
-			waitforload()
-			UpdateStatus("!UNLOCK")
-			reload
+			pathToMapScripts = ".\mainscripts\"
+			Loop, Files, %pathToMapScripts%*.ahk 
+			{
+   				Winclose, %A_LoopFileFullPath%
+				sleep, 50
+			}
+			sleep 3000
+			run .\mainscripts\collection_event_farm.ahk
 			}
 }
 
 ;==========================Main=Loop=Functions=========================================================================
 
+/*
 activatedruidabilityclosed()
 {
 	ImageSearch, a, b, 0, 0, 2560, 1440, *30 .\assets\druidabilityclosed.png
@@ -302,6 +308,8 @@ activatedruidabilityopened()
 				UpdateStatus(currentStatus)
 			}
 }
+*/
+
 levelup()
 {
 	ImageSearch, x, y, 0, 0, 2560, 1440, *30 .\assets\levelup.png

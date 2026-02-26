@@ -97,8 +97,8 @@ imagesearch, a, b, x-500, y-300, x, y+300, *50 .\assets\infernalthumb.png	;CHANG
 		{
 		nomapfound := False
 		click, %a% %b%
-		impoppable()														;Switch between easy() and impoppable() and adjust subsequent line correspondinly
-		Run .\mapscripts\infernalimp.ahk									;Switch script name between mapnameeasy.ahk and mapnameimp.ahk
+		impoppable()							;Switch between easy() and impoppable() and adjust subsequent line correspondinly
+		Run .\mapscripts\infernalimp.ahk				;Switch script name between mapnameeasy.ahk and mapnameimp.ahk
 		}
 
 imagesearch, a, b, x-500, y-300, x, y+300, *50 .\assets\darkdungeonsthumb.png
@@ -222,6 +222,7 @@ if nomapfound {
 else {
 WinShow, InstaCounter
 }
+UpdateStatus("!UNLOCK")
 
 ;=========================Safeguards======================================================================================
 
