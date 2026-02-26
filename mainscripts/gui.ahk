@@ -1,5 +1,5 @@
 ﻿CoordMode, Pixel, Screen
-#SingleInstance, Force
+#SingleInstance, Ignore
 #Persistent
 
 OnMessage(0x4A, "Receive_WM_COPYDATA")
@@ -71,4 +71,4 @@ UpdateInstaCounter()
 		. "Rare: " rare
 	GuiControl, Counter:, InstaCounter, %display%
 }
-=::ExitApp
+-::ExitApp
