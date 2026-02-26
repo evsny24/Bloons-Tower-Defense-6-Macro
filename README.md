@@ -11,7 +11,7 @@ Required:
 - default key binds
     - In settings, reset to default
 - Benjamin unlocked
-- at least one expert map unlocked
+- at least one expert map unlocked, and on each expert map impoppable unlocked if you plan to play impoppable
   
 Recommended:
 - full monkey knowledge for impoppable mode especially
@@ -21,7 +21,8 @@ Recommended:
 # INSTRUCTIONS
 - Load game and navigate to menu screen (where you can click play, choose hero, see achievements, etc.)
 - Run Start_Script.ahk
-- When you want to stop, press = a few times
+- Stop the script that is playing the game by pressing "=" a few times
+- Stop the GUI with "-". If you run into an issue, you can stop the game scripts but keep the GUI running to preserve the insta counter
 
 # USE AT YOUR OWN RISK
 - THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
