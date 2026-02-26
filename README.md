@@ -5,13 +5,13 @@ This is an autohotkey macro program that automates the gameplay of Bloons Tower 
 
 Required:
 - 2560x1440 Resolution
-    - Some placements are pixel perfect, but don't worry; if your monitor is a lower resolution, you can emulate it. See below.
+    - Some placements are pixel perfect, but don't worry; if your monitor is a lower resolution, you can emulate it. See below
 - Fast Track Mode enabled
     - It simply makes the process so much faster, but I am working to make this optional for better accesibility
-- default key binds
+- Default key binds
     - In settings, reset to default
 - Benjamin unlocked
-- at least one expert map unlocked, and on each expert map impoppable unlocked if you plan to play impoppable
+- At least one expert map unlocked, and on each expert map you have unlocked, have impoppable unlocked if you plan to play every map on impoppable
   
 Recommended:
 - full monkey knowledge for impoppable mode especially
