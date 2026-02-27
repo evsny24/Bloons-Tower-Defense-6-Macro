@@ -20,6 +20,7 @@ Recommended:
 - default cursor size also for consistency
 
 # INSTRUCTIONS
+- Click on the blue "Code" button and download zip. Extract the folder.
 - Load game and navigate to menu screen (where you can click play, choose hero, see achievements, etc.)
 - Run Start_Script.ahk
 - Stop the script that is playing the game by pressing "=" a few times
