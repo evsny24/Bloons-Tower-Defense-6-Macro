@@ -23,8 +23,9 @@ Recommended:
 - Click on the blue "Code" button and download zip. Extract the folder.
 - Load game and navigate to menu screen (where you can click play, choose hero, see achievements, etc.)
 - Run Start_Script.ahk
-- Stop the scripts that are playing the game by pressing "=" a few times
-- Stop the GUI with "-". If you run into an issue, you can stop the game scripts but keep the GUI running to preserve the insta counter
+- If you would like to stop or run into an issue:
+    - Stop the scripts that are playing the game by pressing "=" a few times
+    - Stop the GUI with "-". If you run into an issue, you can stop the game scripts but keep the GUI running to preserve the insta counter
 
 # USE AT YOUR OWN RISK
 - THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
