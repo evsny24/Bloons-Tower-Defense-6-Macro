@@ -9,6 +9,7 @@ nomapfound := True
 
 ;===============================START===============================================================================
 
+sleep 1000
 openboxes()								;check for boxes to open
 
 UpdateStatus("is_there_popup?")

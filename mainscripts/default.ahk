@@ -235,18 +235,18 @@ backtomainmenu()
 		{
 		UpdateStatus("wait_for_game_end")
 		sleep 2000
-		ImageSearch, x, y, 0, 0, 2560, 1440, .\assets\home.png
+		ImageSearch, x, y, 0, 0, 2560, 1440, *20 .\assets\victory.png
 			if (ErrorLevel = 0)
 				{
+				ImageSearch, x, y, 0, 0, 2560, 1440, .\assets\home.png
 				click, %x% %y%
 				break
 				}
 			else
 				{
-				click, 1330 1209
+				click, 1142, 1264
 				continue
 				}
-		return
 		}
 	waitforload()
 	Run .\mainscripts\collection_event_farm.ahk
@@ -262,14 +262,20 @@ resetfailsafe()
 			sleep 1000
 			ImageSearch, x, y, 0, 0, 2560, 1440, *30 .\assets\failhome.png
 			click, %x% %y%
-			pathToMapScripts = ".\mainscripts\"
-			Loop, Files, %pathToMapScripts%*.ahk 
-			{
-   				Winclose, %A_LoopFileFullPath%
-				sleep, 50
-			}
-			sleep 3000
-			run .\mainscripts\collection_event_farm.ahk
+
+			SplitPath, A_ScriptDir, , parentDir			;get the parent directory of this script
+			targetDir := parentDir . "\mapscripts\"			;build path to mapscripts
+			WinGet, idList, List, ahk_exe AutoHotkey.exe		;get a list of all running AutoHotkey windows
+			Loop, %idList%						;loop through each one
+				{
+   				id := idList%A_Index%
+   			 	WinGetTitle, winTitle, ahk_id %id%
+   			 	if (InStr(winTitle, targetDir) == 1 && InStr(winTitle, ".ahk"))
+     					WinKill, ahk_id %id%			;if start with targetDir and is ahk, close it
+				}
+
+			sleep 5000
+			reload
 			}
 }
 
