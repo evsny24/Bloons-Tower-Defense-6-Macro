@@ -4,6 +4,7 @@ This is an autohotkey macro program that automates the gameplay of Bloons Tower 
 # REQUIREMENTS TO RUN:
 
 Required:
+- AutoHotKey v1.1
 - 2560x1440 Resolution
     - Some placements are pixel perfect, but don't worry; if your monitor is a lower resolution, you can emulate it. See below
 - Fast Track Mode enabled
