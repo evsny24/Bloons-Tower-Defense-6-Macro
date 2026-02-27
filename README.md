@@ -31,7 +31,7 @@ Recommended:
 # USE AT YOUR OWN RISK
 - THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
 - Although it is not likely you will get flagged as cheating, it is not impossible
-- I am not responsible for any actions taken by NinjaKiwi on anyone's accounts
+- I am not responsible for any consequences from the use of this program
 - Use cautiously, and only in singleplayer for best practice
 - USE AT YOUR OWN RISK
 
