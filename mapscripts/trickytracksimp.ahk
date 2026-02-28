@@ -30,8 +30,12 @@ dart1() {
 	MouseClick, Left, 926, 680
 	sleep 200
 }
-dart2() {
-	MouseClick, Left, 1356, 810
+boomer1() {
+	MouseClick, Left, 1070, 547
+	sleep 200
+}
+boomer2() {
+	MouseClick, Left, 1341, 807
 	sleep 200
 }
 wizard1() {
@@ -118,11 +122,14 @@ sfactory() {
 	MouseClick, Left, 1023, 967
 	sleep 200
 }
-;ace() {
-;	MouseClick, Left, 881, 1058
-;	sleep 200
-;}
-
+glue1() {
+	MouseClick, Left, 1173, 515
+	sleep 200
+}
+glue2() {
+	MouseClick, Left, 1001, 1052
+	sleep 200
+}
 ;-------------START-------------
 
 WinActivate, BloonsTD6
@@ -133,8 +140,8 @@ desperado1()
 desperado2()
 send {q}
 dart1()
-send {q}
-dart2()
+send {w}
+boomer2()
 send {z}
 sniper1()
 sniper1()
@@ -383,6 +390,50 @@ waitforupgrade3()
 waitforupgrade3()
 waitforupgrade3()
 waitforupgrade3()
+deselect()
+
+canaffordtower("w")
+boomer1()
+boomer1()
+targetsmart()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade2()
+waitforupgrade2()
+deselect()
+
+boomer2()
+targetsmart()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade2()
+waitforupgrade2()
+deselect()
+
+canaffordtower("y")
+glue1()
+glue1()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade2()
+waitforupgrade2()
+deselect()
+
+canaffordtower("y")
+glue2()
+glue2()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade2()
+waitforupgrade2()
 deselect()
 
 sniper1()
