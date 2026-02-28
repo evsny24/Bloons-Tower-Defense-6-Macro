@@ -231,16 +231,25 @@ usecashdrop()
 
 backtomainmenu()
 {
+UpdateStatus("wait_for_game_end")
 	loop
 		{
-		UpdateStatus("wait_for_game_end")
 		sleep 2000
 		ImageSearch, x, y, 0, 0, 2560, 1440, *20 .\assets\victory.png
 			if (ErrorLevel = 0)
 				{
-				ImageSearch, x, y, 0, 0, 2560, 1440, .\assets\home.png
-				click, %x% %y%
-				break
+				loop
+					{
+					ImageSearch, x, y, 0, 0, 2560, 1440, .\assets\home.png
+					if (ErrorLevel = 0)
+						{
+						click, %x% %y%
+						waitforload()
+						Run .\mainscripts\collection_event_farm.ahk
+						return
+						}
+					sleep 100
+					}
 				}
 			else
 				{
@@ -248,9 +257,7 @@ backtomainmenu()
 				continue
 				}
 		}
-	waitforload()
-	Run .\mainscripts\collection_event_farm.ahk
-	return
+
 }
 resetfailsafe()
 {
