@@ -47,7 +47,7 @@ Recommended:
 
 # NOTICE
 
-Some maps use cash drops to improve reliability. Even though you earn the money back, you may configure the settings however you want. There is a no cash drops preset configuration you can enable in the config file.
+Some maps use cash drops to improve reliability. Even though you earn the money back, you may configure the settings however you want. There is a no cash drops preset configuration you can enable in the config file to earn maximum rewards while not using or buying any cash drops.
 
 Maps that use cash drops on impoppable
 - bloody puddles
