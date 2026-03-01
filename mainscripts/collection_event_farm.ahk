@@ -47,48 +47,20 @@ click, %x% %y%
 MouseMove, 0, 0
 sleep 500
 
-UpdateStatus("look_for_event_map")
-loop 3 {								; Search for event map and logo coords
-sleep 300
-imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem.png
-if (ErrorLevel = 0)
-	break
-else
-	{								; Search for every possible event, switching pages if needed
-	imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem2.png
-	if (ErrorLevel = 0)
-		break
-	else
-		{
-		imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem3.png
+UpdateStatus("look_for_event_map")					; Find bonus indicator
+loop 3 {
+	loop 6 {
+		eventPath := ".\assets\totem" . A_Index . ".png"
+		sleep 200
+		imagesearch, x, y, 0, 0, 2560, 1440, % "*100 " . eventPath
 		if (ErrorLevel = 0)
-			break
-		else
-			{
-			imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem4.png
-			if (ErrorLevel = 0)
-				break
-			else
-				{
-				imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem5.png
-				if (ErrorLevel = 0)
-					break
-				else
-					{
-					imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem6.png
-					if (ErrorLevel = 0)
-						break
-					else
-						{
-						imagesearch, e, f, 0, 0, 2560, 1440, .\assets\expert.png
-						click, %e% %f%
-						}
-					}
-				}
-			}
-		}
+			goto, findmap
 	}
+imagesearch, e, f, 0, 0, 2560, 1440, .\assets\expert.png
+click, %e% %f%
 }
+
+findmap:
 
 ;==========Finding=and=picking=map=and=difficulty=based=on=config===============================================================================
 
@@ -217,3 +189,48 @@ loop										; Do not need break because script is supposed to reload after map
 }
 
 =::ExitApp
+
+;========================Temp=legacy=code=might=need===================================================================================
+
+UpdateStatus("look_for_event_map")
+loop 3 {								; Search for event map and logo coords
+sleep 300
+imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem.png
+if (ErrorLevel = 0)
+	break
+else
+	{								; Search for every possible event, switching pages if needed
+	imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem2.png
+	if (ErrorLevel = 0)
+		break
+	else
+		{
+		imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem3.png
+		if (ErrorLevel = 0)
+			break
+		else
+			{
+			imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem4.png
+			if (ErrorLevel = 0)
+				break
+			else
+				{
+				imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem5.png
+				if (ErrorLevel = 0)
+					break
+				else
+					{
+					imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem6.png
+					if (ErrorLevel = 0)
+						break
+					else
+						{
+						imagesearch, e, f, 0, 0, 2560, 1440, .\assets\expert.png
+						click, %e% %f%
+						}
+					}
+				}
+			}
+		}
+	}
+}
