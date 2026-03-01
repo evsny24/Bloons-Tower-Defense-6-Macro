@@ -21,6 +21,7 @@ Recommended:
 
 # INSTRUCTIONS
 - Click on the blue "Code" button and download zip. Extract the folder.
+- If you wish to change the settings, open the config file in a text editor and follow directions there
 - Load game and navigate to menu screen (where you can click play, choose hero, see achievements, etc.)
 - Run Start_Script.ahk
 - If you would like to stop or run into an issue:
@@ -36,8 +37,8 @@ Recommended:
 - USE AT YOUR OWN RISK
 
 # CAPABILITIES
-- Can play every expert map on either impoppable or easy, see below on how to change difficulty
-    - (Advanced) Per-map difficulty selection by going into the mainscripts folder and editing collection_event_farm.ahk starting at line 95, instructions in the file 
+- Can play every expert map on either impoppable or easy
+    - Per-map difficulty selection by editing the config file, instructions in the file
 - Smart detection helps the loop to continue if you level up, fail, or get an advertisement
     - Yes, there are ads for the DLC if you do not own them
 - Will automatically select the event map for maximum rewards, but still works without an ongoing event
@@ -46,7 +47,7 @@ Recommended:
 
 # NOTICE
 
-Some maps use cash drops to improve reliability. Even though you earn the money back, you may configure some maps on easy difficulty instead.
+Some maps use cash drops to improve reliability. Even though you earn the money back, you may configure however you want. There is a no cash drops preset configuration you can enable in the config file.
 
 Maps that use cash drops on impoppable
 - bloody puddles
