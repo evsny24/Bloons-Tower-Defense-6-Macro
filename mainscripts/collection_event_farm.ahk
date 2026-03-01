@@ -5,23 +5,22 @@ SetWorkingDir ..\
 
 WinActivate, BloonsTD6
 WinGetActiveStats, winT, winW, winH, winX, winY
-nomapfound := True
 
 ;===============================START===============================================================================
 
 sleep 1000
-openboxes()								;check for boxes to open
+openboxes()								; Check for boxes to open
 
 UpdateStatus("is_there_popup?")
-imagesearch, x, y, 0, 0, winW, winH, .\assets\dlcpopup.png		;check for annoying popup ads for DLCs
+imagesearch, x, y, 0, 0, winW, winH, .\assets\dlcpopup.png		; Check for annoying popup ads for DLCs
 if (ErrorLevel = 0)
 	click, %x% %y%
 
-UpdateStatus("equip_benjamin_hero")					;is benjamin equipped?
+UpdateStatus("equip_benjamin_hero")					; Is benjamin equipped?
 imagesearch, x, y, 0, 0, winW, winH, .\assets\benjaminequipped.png
 if (ErrorLevel = 1)	
 	{
-	imagesearch, x, y, 0, 0, winW, winH, .\assets\heroes.png	;go select him if not
+	imagesearch, x, y, 0, 0, winW, winH, .\assets\heroes.png	; Go select him if not
 	click, %x% %y%
 	sleep 500
 
@@ -33,29 +32,29 @@ if (ErrorLevel = 1)
 	click, %x% %y%
 	sleep 200
 
-	send {escape}							;exit hero menu
+	send {escape}							; Exit hero menu
 	sleep 500
 	}
 
-UpdateStatus("select_play")						;enter map selection screen
+UpdateStatus("select_play")						; Enter map selection screen
 imagesearch, x, y, 0, 0, winW, winH, .\assets\play.png
 click, %x% %y%
 sleep 500
 
-UpdateStatus("select_expert")						;click expert
+UpdateStatus("select_expert")						; Click expert
 imagesearch, x, y, 0, 0, winW, winH, .\assets\expert.png
 click, %x% %y%
 MouseMove, 0, 0
 sleep 500
 
 UpdateStatus("look_for_event_map")
-loop 3 {								;search for event map and logo coords
-sleep 500
+loop 3 {								; Search for event map and logo coords
+sleep 300
 imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem.png
 if (ErrorLevel = 0)
 	break
 else
-	{								;search for every possible event, switching pages if needed
+	{								; Search for every possible event, switching pages if needed
 	imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem2.png
 	if (ErrorLevel = 0)
 		break
@@ -91,150 +90,130 @@ else
 	}
 }
 
-;-------------------defining-mode-for-each-map-----------------
+;==========Finding=and=picking=map=and=difficulty=based=on=config===============================================================================
 
-imagesearch, a, b, x-500, y-300, x, y+300, *50 .\assets\infernalthumb.png	;CHANGE DIFFICULTY SETTINGS PER MAP HERE
-	if (ErrorLevel = 0)
-		{
-		nomapfound := False
-		click, %a% %b%
-		impoppable()							;Switch between easy() and impoppable() and adjust subsequent line correspondinly
-		Run .\mapscripts\infernalimp.ahk				;Switch script name between mapnameeasy.ahk and mapnameimp.ahk
-		}
+allThumbnails := ["bloodypuddles", "darkdungeons", "glacialtrail", "workshop", "trickytracks", "darkcastle", "floodedvalley", "infernal", "muddypuddles", "ouch", "quad", "ravine", "sanctuary"]
+cashThumbnails := ["bloodypuddles", "darkdungeons", "glacialtrail", "workshop", "trickytracks"]
+noCashThumbnails := ["darkcastle", "floodedvalley", "infernal", "muddypuddles", "ouch", "quad", "ravine", "sanctuary"]
+configPath := ".\config.ini"
+nomapfound := True
 
-imagesearch, a, b, x-500, y-300, x, y+300, *50 .\assets\darkdungeonsthumb.png
-	if (ErrorLevel = 0)
-		{
-		nomapfound := False
-		click, %a% %b%
-		impoppable()
-		Run .\mapscripts\darkdungeonsimp.ahk
-		}
+IniRead, onlyImpoppable, %configPath%, Settings, onlyImpoppable, false			; Read config file
+IniRead, onlyEasy, %configPath%, Settings, onlyEasy, false
+IniRead, noCashDrops, %configPath%, Settings, noCashDrops, false
+IniRead, randomMaps, %configPath%, Settings, randomMaps, falseS
 
-imagesearch, a, b, x-500, y-300, x, y+300, *50 .\assets\glacialtrailthumb.png
-	if (ErrorLevel = 0)
+if (onlyImpoppable = "true") {								; All impoppable maps
+	Loop, % allThumbnails.MaxIndex()
 		{
-		nomapfound := False
-		click, %a% %b%
-		impoppable()
-		Run .\mapscripts\glacialtrailimp.ahk
+    		mapName := allThumbnails[A_Index]
+    		thumbPath := ".\assets\" . mapName . "thumb.png"
+		scriptPath := ".\mapscripts\" . mapName . "imp.ahk"
+    		imagesearch, a, b, x-500, y-300, x, y+300, % "*50 " . thumbPath
+    		if (ErrorLevel = 0)
+        		{
+			nomapfound := False
+			click, %a% %b%
+			imp()
+			Run %scriptPath%
+			goto, foundmap
+			}
 		}
-	
-imagesearch, a, b, x-500, y-300, x, y+300, *50 .\assets\sanctuarythumb.png
-	if (ErrorLevel = 0)
+}
+if (onlyEasy = "true") {								; All easy maps
+	Loop, % allThumbnails.MaxIndex()
 		{
-		nomapfound := False
-		click, %a% %b%
-		impoppable()
-		Run .\mapscripts\sanctuaryimp.ahk
+    		mapName := allThumbnails[A_Index]
+    		thumbPath := ".\assets\" . mapName . "thumb.png"
+		scriptPath := ".\mapscripts\" . mapName . "easy.ahk"
+    		imagesearch, a, b, x-500, y-300, x, y+300, % "*50 " . thumbPath
+    		if (ErrorLevel = 0)
+        		{
+			nomapfound := False
+			click, %a% %b%
+			easy()
+			Run %scriptPath%
+			goto, foundmap
+			}
 		}
-	
-imagesearch, a, b, x-500, y-300, x, y+300, *50 .\assets\ravinethumb.png
-	if (ErrorLevel = 0)
+}
+if (noCashDrops = "true") {								; Doesn't use cash drops
+	Loop, % cashThumbnails.MaxIndex()
 		{
-		nomapfound := False
-		click, %a% %b%
-		impoppable()
-		Run .\mapscripts\ravineimp.ahk 
+    		mapName := cashThumbnails[A_Index]
+    		thumbPath := ".\assets\" . mapName . "thumb.png"
+		scriptPath := ".\mapscripts\" . mapName . "easy.ahk"
+    		imagesearch, a, b, x-500, y-300, x, y+300, % "*50 " . thumbPath
+    		if (ErrorLevel = 0)
+        		{
+			nomapfound := False
+			click, %a% %b%
+			easy()
+			Run %scriptPath%
+			goto, foundmap
+			}
 		}
-
-imagesearch, a, b, x-500, y-300, x, y+300, *50 .\assets\floodedvalleythumb.png
-	if (ErrorLevel = 0)
+	if (nomapfound) {
+		Loop, % noCashThumbnails.MaxIndex()
+			{
+    			mapName := noCashThumbnails[A_Index]
+    			thumbPath := ".\assets\" . mapName . "thumb.png"
+			scriptPath := ".\mapscripts\" . mapName . "imp.ahk"
+    			imagesearch, a, b, x-500, y-300, x, y+300, % "*50 " . thumbPath
+    			if (ErrorLevel = 0)
+        			{
+				nomapfound := False
+				click, %a% %b%
+				imp()
+				Run %scriptPath%
+				goto, foundmap
+				}
+			}
+	}
+}
+if (onlyImpoppable != "true" && onlyEasy != "true" && noCashDrops != "true" && randomMaps != "true") {		; Per-map difficulty selection
+	Loop, % allThumbnails.MaxIndex()
 		{
-		nomapfound := False
-		click, %a% %b%
-		impoppable()
-		Run .\mapscripts\floodedvalleyimp.ahk
+    		mapName := allThumbnails[A_Index]
+    		thumbPath := ".\assets\" . mapName . "thumb.png"
+		IniRead, mapDifficulty, %configPath%, Settings, %mapName%, easy
+		scriptPath := ".\mapscripts\" . mapName . mapDifficulty . ".ahk"
+    		imagesearch, a, b, x-500, y-300, x, y+300, % "*50 " . thumbPath
+    		if (ErrorLevel = 0)
+        		{
+			nomapfound := False
+			click, %a% %b%
+			%mapDifficulty%()
+			Run %scriptPath%
+			goto, foundmap
+			}
 		}
-
-imagesearch, a, b, x-500, y-300, x, y+300, *50 .\assets\bloodypuddlesthumb.png
-	if (ErrorLevel = 0)
-		{
-		nomapfound := False
-		click, %a% %b%
-		impoppable()
-		Run .\mapscripts\bloodypuddlesimp.ahk
-		}
-
-imagesearch, a, b, x-500, y-300, x, y+300, *50 .\assets\workshopthumb.png
-	if (ErrorLevel = 0)
-		{
-		nomapfound := False
-		click, %a% %b%
-		impoppable()
-		Run .\mapscripts\workshopimp.ahk
-		}
-
-imagesearch, a, b, x-500, y-300, x, y+300, *50 .\assets\quadthumb.png
-	if (ErrorLevel = 0)
-		{
-		nomapfound := False
-		click, %a% %b%
-		impoppable()
-		Run .\mapscripts\quadimp.ahk
-		}
-
-imagesearch, a, b, x-500, y-300, x, y+300, *50 .\assets\darkcastlethumb.png
-	if (ErrorLevel = 0)
-		{
-		nomapfound := False
-		click, %a% %b%
-		impoppable()
-		Run .\mapscripts\darkcastleimp.ahk
-		}
-
-imagesearch, a, b, x-500, y-300, x, y+300, *50 .\assets\muddypuddlesthumb.png
-	if (ErrorLevel = 0)
-		{
-		nomapfound := False
-		click, %a% %b%
-		impoppable()
-		Run .\mapscripts\muddypuddlesimp.ahk
-		}
-
-imagesearch, a, b, x-500, y-300, x, y+300, *50 .\assets\ouchthumb.png
-	if (ErrorLevel = 0)
-		{
-		nomapfound := False
-		click, %a% %b%
-		impoppable()
-		Run .\mapscripts\ouchimp.ahk
-		}
-imagesearch, a, b, x-500, y-300, x, y+300, *50 .\assets\trickytracksthumb.png
-	if (ErrorLevel = 0)
-		{
-		nomapfound := False
-		click, %a% %b%
-		impoppable()
-		Run .\mapscripts\trickytracksimp.ahk
-		}
-
-if nomapfound {
-	WinHide, InstaCounter
+}
+if (nomapfound || randomMaps) {							; No ongoing collection event or bonus map targeting turned off
+	WinHide, InstaCounter	; Don't need counter GUI
 	Click, 1453, 1292
 	sleep 200
 	Click, 1784, 1296
 	sleep 200
 	Click, 1928, 751
 	sleep 200
-	impoppable()
+	imp()
 	Run .\mapscripts\floodedvalleyimp.ahk
 }
-else {
-WinShow, InstaCounter
-}
-UpdateStatus("!UNLOCK")
+else if (!nomapfound && !randomMaps)
+	WinShow, InstaCounter	; Replace counter GUI if config changes
+
+foundmap:
+
+UpdateStatus("!UNLOCK")								; Unlock status GUI because it's locked during resets
 
 ;=========================Safeguards======================================================================================
 
-loop
+loop										; Do not need break because script is supposed to reload after map
 {
 	sleep 500
 	resetfailsafe()
-	;activatedruidabilityclosed() THEY MADE THE ABILITY A PASSIVE
-	;activatedruidabilityopened() THEY MADE THE ABILITY A PASSIVE
 	levelup()
 }
 
 =::ExitApp
-

@@ -163,13 +163,14 @@ targetsmart()
 	send {Tab}
 	sleep 200
 }
-impoppable()
+imp()
 {
 	UpdateStatus("selecting_difficulty")
 	sleep 500
 	click, 1719, 571
 	sleep 500
 	click, 1719, 1002
+	sleep 200
 	waitforload()
 }
 easy()
@@ -179,6 +180,7 @@ easy()
 	click, 825 571
 	sleep 500
 	click, 842 786
+	sleep 200
 	waitforload()
 }
 waitforload()
