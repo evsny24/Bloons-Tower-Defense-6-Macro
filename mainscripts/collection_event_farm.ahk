@@ -3,6 +3,11 @@
 SetWorkingDir %A_ScriptDir%
 SetWorkingDir ..\
 
+configPath := ".\config.ini"
+allThumbnails := ["bloodypuddles", "darkdungeons", "glacialtrail", "workshop", "trickytracks", "darkcastle", "floodedvalley", "infernal", "muddypuddles", "ouch", "quad", "ravine", "sanctuary"]
+cashThumbnails := ["bloodypuddles", "darkdungeons", "glacialtrail", "workshop", "trickytracks"]
+noCashThumbnails := ["darkcastle", "floodedvalley", "infernal", "muddypuddles", "ouch", "quad", "ravine", "sanctuary"]
+
 WinActivate, BloonsTD6
 WinGetActiveStats, winT, winW, winH, winX, winY
 
@@ -16,7 +21,7 @@ imagesearch, x, y, 0, 0, winW, winH, .\assets\dlcpopup.png		; Check for annoying
 if (ErrorLevel = 0)
 	click, %x% %y%
 
-UpdateStatus("equip_benjamin_hero")					; Is benjamin equipped?
+UpdateStatus("equip_benjamin")						; Is benjamin equipped?
 imagesearch, x, y, 0, 0, winW, winH, .\assets\benjaminequipped.png
 if (ErrorLevel = 1)	
 	{
@@ -47,9 +52,19 @@ click, %x% %y%
 MouseMove, 0, 0
 sleep 500
 
-UpdateStatus("look_for_event_map")					; Find bonus indicator
+IniRead, ignoringEvent, %configPath%, EventSettings, ignoreEvent, false
+if (ignoringEvent = "true")						; If not farming event:
+	{
+	WinHide, InstaCounter							; Don't need counter GUI
+	goto, nonEventSelection							; Skip to non-event map selection
+	}
+else
+	WinShow, InstaCounter						; If config changes during runtime, put GUI back
+
+UpdateStatus("find_bonus_indicator")				; Find bonus indicator
 loop 3 {
 	loop 6 {
+		noTotemFound := true
 		eventPath := ".\assets\totem" . A_Index . ".png"
 		sleep 200
 		imagesearch, x, y, 0, 0, 2560, 1440, % "*100 " . eventPath
@@ -60,23 +75,19 @@ imagesearch, e, f, 0, 0, 2560, 1440, .\assets\expert.png
 click, %e% %f%
 }
 
+goto, nonEventSelection							; If indicator not found, will go to non-event map selection
+
 findmap:
 
 ;==========Finding=and=picking=map=and=difficulty=based=on=config===============================================================================
 
-allThumbnails := ["bloodypuddles", "darkdungeons", "glacialtrail", "workshop", "trickytracks", "darkcastle", "floodedvalley", "infernal", "muddypuddles", "ouch", "quad", "ravine", "sanctuary"]
-cashThumbnails := ["bloodypuddles", "darkdungeons", "glacialtrail", "workshop", "trickytracks"]
-noCashThumbnails := ["darkcastle", "floodedvalley", "infernal", "muddypuddles", "ouch", "quad", "ravine", "sanctuary"]
-configPath := ".\config.ini"
-nomapfound := True
+IniRead, onlyImpoppable, %configPath%, eventSettings, onlyImpoppable, false		; Read config file for preset configuration states
+IniRead, onlyEasy, %configPath%, eventSettings, onlyEasy, false
+IniRead, noCashDrops, %configPath%, eventSettings, noCashDrops, false
 
-IniRead, onlyImpoppable, %configPath%, Settings, onlyImpoppable, false			; Read config file
-IniRead, onlyEasy, %configPath%, Settings, onlyEasy, false
-IniRead, noCashDrops, %configPath%, Settings, noCashDrops, false
-IniRead, randomMaps, %configPath%, Settings, randomMaps, falseS
-
-if (onlyImpoppable = "true") {								; All impoppable maps
-	Loop, % allThumbnails.MaxIndex()
+if (onlyImpoppable = "true") {								; If onlyImpoppable is selected
+	UpdateStatus("playing_impoppable")
+	Loop, % allThumbnails.MaxIndex()						; Find which map is next to the bonus indicator
 		{
     		mapName := allThumbnails[A_Index]
     		thumbPath := ".\assets\" . mapName . "thumb.png"
@@ -84,16 +95,16 @@ if (onlyImpoppable = "true") {								; All impoppable maps
     		imagesearch, a, b, x-500, y-300, x, y+300, % "*50 " . thumbPath
     		if (ErrorLevel = 0)
         		{
-			nomapfound := False
 			click, %a% %b%
-			imp()
+			imp()								; Play the map on impoppable
 			Run %scriptPath%
 			goto, foundmap
 			}
 		}
 }
-if (onlyEasy = "true") {								; All easy maps
-	Loop, % allThumbnails.MaxIndex()
+if (onlyEasy = "true") {								; If onlyEasy is selected
+	UpdateStatus("playing_easy")
+	Loop, % allThumbnails.MaxIndex()						; Find which map is next to the bonus indicator
 		{
     		mapName := allThumbnails[A_Index]
     		thumbPath := ".\assets\" . mapName . "thumb.png"
@@ -101,16 +112,16 @@ if (onlyEasy = "true") {								; All easy maps
     		imagesearch, a, b, x-500, y-300, x, y+300, % "*50 " . thumbPath
     		if (ErrorLevel = 0)
         		{
-			nomapfound := False
 			click, %a% %b%
-			easy()
+			easy()								; Play the map on easy
 			Run %scriptPath%
 			goto, foundmap
 			}
 		}
 }
-if (noCashDrops = "true") {								; Doesn't use cash drops
-	Loop, % cashThumbnails.MaxIndex()
+if (noCashDrops = "true") {								; if noCashDrops is enabled
+	UpdateStatus("no_cash_drop_mode")
+	Loop, % cashThumbnails.MaxIndex()						; Find which map is next to the bonus indicator
 		{
     		mapName := cashThumbnails[A_Index]
     		thumbPath := ".\assets\" . mapName . "thumb.png"
@@ -118,70 +129,81 @@ if (noCashDrops = "true") {								; Doesn't use cash drops
     		imagesearch, a, b, x-500, y-300, x, y+300, % "*50 " . thumbPath
     		if (ErrorLevel = 0)
         		{
-			nomapfound := False
 			click, %a% %b%
-			easy()
+			easy()								; Play easy if it requires a cash drop
 			Run %scriptPath%
 			goto, foundmap
 			}
 		}
-	if (nomapfound) {
-		Loop, % noCashThumbnails.MaxIndex()
-			{
-    			mapName := noCashThumbnails[A_Index]
-    			thumbPath := ".\assets\" . mapName . "thumb.png"
-			scriptPath := ".\mapscripts\" . mapName . "imp.ahk"
-    			imagesearch, a, b, x-500, y-300, x, y+300, % "*50 " . thumbPath
-    			if (ErrorLevel = 0)
-        			{
-				nomapfound := False
-				click, %a% %b%
-				imp()
-				Run %scriptPath%
-				goto, foundmap
-				}
+	Loop, % noCashThumbnails.MaxIndex()
+		{
+    		mapName := noCashThumbnails[A_Index]
+    		thumbPath := ".\assets\" . mapName . "thumb.png"
+		scriptPath := ".\mapscripts\" . mapName . "imp.ahk"
+    		imagesearch, a, b, x-500, y-300, x, y+300, % "*50 " . thumbPath
+    		if (ErrorLevel = 0)
+        		{
+			click, %a% %b%
+			imp()								; Play impoppable if it does not require a cash drop
+			Run %scriptPath%
+			goto, foundmap
 			}
-	}
+		}
 }
-if (onlyImpoppable != "true" && onlyEasy != "true" && noCashDrops != "true" && randomMaps != "true") {		; Per-map difficulty selection
-	Loop, % allThumbnails.MaxIndex()
+if (onlyImpoppable != "true" && onlyEasy != "true" && noCashDrops != "true") {		; If no presets are selected
+	UpdateStatus("per_map_configurations")
+	Loop, % allThumbnails.MaxIndex()						; Play the map next to the indicator
 		{
     		mapName := allThumbnails[A_Index]
     		thumbPath := ".\assets\" . mapName . "thumb.png"
-		IniRead, mapDifficulty, %configPath%, Settings, %mapName%, easy
+		IniRead, mapDifficulty, %configPath%, eventSettings, %mapName%, easy
 		scriptPath := ".\mapscripts\" . mapName . mapDifficulty . ".ahk"
     		imagesearch, a, b, x-500, y-300, x, y+300, % "*50 " . thumbPath
     		if (ErrorLevel = 0)
         		{
-			nomapfound := False
 			click, %a% %b%
-			%mapDifficulty%()
+			%mapDifficulty%()						; Play on the difficulty specified in config
 			Run %scriptPath%
 			goto, foundmap
 			}
 		}
 }
-if (nomapfound || randomMaps) {							; No ongoing collection event or bonus map targeting turned off
-	WinHide, InstaCounter	; Don't need counter GUI
-	Click, 1453, 1292
-	sleep 200
-	Click, 1784, 1296
-	sleep 200
-	Click, 1928, 751
-	sleep 200
-	imp()
-	Run .\mapscripts\floodedvalleyimp.ahk
+
+nonEventSelection:									; If collection event turned off or not found
+
+UpdateStatus("random_map")
+randMapDifficulty := "null"
+while (randMapDifficulty = "null") {							; Find a random map that is not null
+	Random, randInt, 1, allThumbnails.MaxIndex()
+	randMap := allThumbnails[randInt]
+	IniRead, randMapDifficulty, %configPath%, nonEventSettings, %randMap%, null
 }
-else if (!nomapfound && !randomMaps)
-	WinShow, InstaCounter	; Replace counter GUI if config changes
+thumbPath := ".\assets\" . randMap . "thumb.png"
+scriptPath := ".\mapscripts\" . randMap . randMapDifficulty . ".ahk"
+loop 3 {										; Find the map by switching pages until it is found
+	sleep 500
+	imagesearch, a, b, 0, 0, 2560, 1440, % "*50 " . thumbPath
+	if (ErrorLevel = 0)
+		{
+		click, %a% %b%
+		%randMapDifficulty%()							; Play on difficulty specified in config
+		Run %scriptPath%
+		goto, foundmap
+		}
+	else 
+		{
+		imagesearch, e, f, 0, 0, 2560, 1440, .\assets\expert.png
+		click, %e% %f%
+		}
+}
 
 foundmap:
 
-UpdateStatus("!UNLOCK")								; Unlock status GUI because it's locked during resets
+UpdateStatus("!UNLOCK")									; Unlock status GUI because it's locked during fail resets
 
 ;=========================Safeguards======================================================================================
 
-loop										; Do not need break because script is supposed to reload after map
+loop											; Do not need break because script is supposed to reload after map
 {
 	sleep 500
 	resetfailsafe()
@@ -189,48 +211,3 @@ loop										; Do not need break because script is supposed to reload after map
 }
 
 =::ExitApp
-
-;========================Temp=legacy=code=might=need===================================================================================
-
-UpdateStatus("look_for_event_map")
-loop 3 {								; Search for event map and logo coords
-sleep 300
-imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem.png
-if (ErrorLevel = 0)
-	break
-else
-	{								; Search for every possible event, switching pages if needed
-	imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem2.png
-	if (ErrorLevel = 0)
-		break
-	else
-		{
-		imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem3.png
-		if (ErrorLevel = 0)
-			break
-		else
-			{
-			imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem4.png
-			if (ErrorLevel = 0)
-				break
-			else
-				{
-				imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem5.png
-				if (ErrorLevel = 0)
-					break
-				else
-					{
-					imagesearch, x, y, 0, 0, 2560, 1440, *100 .\assets\totem6.png
-					if (ErrorLevel = 0)
-						break
-					else
-						{
-						imagesearch, e, f, 0, 0, 2560, 1440, .\assets\expert.png
-						click, %e% %f%
-						}
-					}
-				}
-			}
-		}
-	}
-}
