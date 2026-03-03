@@ -1,29 +1,31 @@
 # BTD6-Collection-Event-Macro
-This is an autohotkey macro program that automates the gameplay of Bloons Tower Defense 6. It's main focus is completing expert maps on the hardest difficulty to gain the most amount of currency, especially during collection events where it will target bonus maps to get the maximum rewards.
+This is an autohotkey macro program that automates the gameplay of Bloons Tower Defense 6. It's main focus is completing expert maps on the hardest difficulty to gain the most amount of currency for the in-game collection events, where it will target bonus maps to get the maximum rewards.
 
 # REQUIREMENTS TO RUN:
 
 Required:
 - AutoHotKey v1.1
+    - Download from https://www.autohotkey.com
 - 2560x1440 Resolution
     - Some placements are pixel perfect, but don't worry; if your monitor is a lower resolution, you can emulate it. See below
 - Fast Track Mode enabled
-    - It simply makes the process so much faster, but I am working to make this optional for better accesibility
+    - It simply makes the process so much faster, but I am considering working around this in the future
 - Default key binds
     - In settings, reset to default
 - Benjamin unlocked
-- At least one expert map unlocked, and on each expert map you have unlocked, have impoppable unlocked if you plan to play every map on impoppable
+- At least one expert map unlocked, and optionally impoppable mode unlocked for maps you plan to play on that difficulty
   
 Recommended:
-- full monkey knowledge for impoppable mode especially
+- full monkey knowledge for impoppable mode
 - map visual effects off for consistency
 - default cursor size also for consistency
 
 # INSTRUCTIONS
-- Click on the blue "Code" button and download zip. Extract the folder.
+- Go to the latest release from the collumn on the right and download as zip. Extract the folder
 - If you wish to change the settings, open the config file in a text editor and follow directions there
-- Load game and navigate to menu screen (where you can click play, choose hero, see achievements, etc.)
-- Run Start_Script.ahk
+- Load game and navigate to menu screen seen below
+- <img width="384" height="216" alt="mainmenu" src="https://github.com/user-attachments/assets/038d6da9-8ef8-4699-b2e5-23ca431a1483" />
+- Always run Start_Script.ahk from the main menu
 - If you would like to stop or run into an issue:
     - Stop the scripts that are playing the game by pressing "=" a few times
     - You may choose to stop the game scripts but keep the GUI running to preserve the insta counter
@@ -41,8 +43,8 @@ Recommended:
     - Per-map difficulty selection by editing the config file, instructions in the file
 - Smart detection helps the loop to continue if you level up, fail, or get an advertisement
     - Yes, there are ads for the DLC if you do not own them
-- Will automatically select the event map for maximum rewards, but still works without an ongoing event
-- Opens boxes when enough resources are collected, and keeps track of each rarity insta you obtain in a GUI
+- Can automatically select and play the bonus map, or any other expert maps you want specified in the config file
+- Opens event boxes when enough resources are collected, and keeps track of each rarity insta you obtain in a GUI
 - Shows the current action being performed in the top right GUI
 
 # NOTICE
