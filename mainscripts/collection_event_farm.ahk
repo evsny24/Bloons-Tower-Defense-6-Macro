@@ -54,10 +54,7 @@ sleep 500
 
 IniRead, ignoringEvent, %configPath%, EventSettings, ignoreEvent, false
 if (ignoringEvent = "true")						; If not farming event:
-	{
-	WinHide, InstaCounter							; Don't need counter GUI
 	goto, nonEventSelection							; Skip to non-event map selection
-	}
 else
 	WinShow, InstaCounter						; If config changes during runtime, put GUI back
 
@@ -172,6 +169,7 @@ if (onlyImpoppable != "true" && onlyEasy != "true" && noCashDrops != "true") {		
 nonEventSelection:									; If collection event turned off or not found
 
 UpdateStatus("random_map")
+WinHide, InstaCounter									; Don't need counter GUI
 randMapDifficulty := "null"
 while (randMapDifficulty = "null") {							; Find a random map that is not null
 	Random, randInt, 1, allThumbnails.MaxIndex()
