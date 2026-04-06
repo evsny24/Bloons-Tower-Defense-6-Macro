@@ -1,95 +1,127 @@
-# BTD6-Collection-Event-Macro
-This is a beginner friendly, easy-to-use autohotkey macro program that automates the gameplay of Bloons Tower Defense 6. It's main focus is completing expert maps on the hardest difficulty to gain the most amount of currency for the in-game collection events, where it will target bonus maps to get the maximum rewards.
+# BTD6 Collection Event Macro
 
-# REQUIREMENTS TO RUN:
+A beginner-friendly, easy-to-use AutoHotkey macro that automates gameplay in Bloons Tower Defense 6.
 
-Required:
-- AutoHotKey v1.1
-    - Download from https://www.autohotkey.com
-- 2560x1440 Resolution
-    - Some placements are pixel perfect, but don't worry; if your monitor is a lower resolution, you can emulate it. See below
-- Fast Track Mode enabled
-    - It simply makes the process so much faster, but I am considering working around this in the future
-- Default key binds
-    - In settings, reset to default
+Its primary purpose is to complete expert maps on the hardest difficulty to maximize currency gained during collection events. The macro prioritizes bonus maps for optimal rewards.
+
+---
+
+## Requirements
+
+### Required
+- AutoHotkey v1.1  
+  Download: https://www.autohotkey.com
+- 2560×1440 resolution  
+  Some placements are pixel-perfect (see resolution emulation section below)
+- Fast Track Mode enabled  
+  Speeds up runs significantly
+- Default keybinds  
+  Reset in-game settings to default
 - Benjamin unlocked
-- At least one expert map unlocked, and optionally impoppable mode unlocked for maps you plan to play on that difficulty
-  
-Recommended:
-- full monkey knowledge for impoppable mode
-- map visual effects off for consistency
-- default cursor size also for consistency
+- At least one expert map unlocked  
+  Impoppable mode is optional
 
-# INSTRUCTIONS
-- Go to the latest release from the collumn on the right and download as zip. Extract the folder
-- If you wish to change the settings, open the config file in a text editor and follow directions there
-- Load game and navigate to menu screen seen below
-<br><br><img width="384" height="216" alt="mainmenu" src="https://github.com/user-attachments/assets/038d6da9-8ef8-4699-b2e5-23ca431a1483" /><br>
-- Always run Start_Script.ahk from the main menu
-- If you would like to stop or run into an issue:
-    - Stop the scripts that are playing the game by pressing "=" a few times
-    - You may choose to stop the game scripts but keep the GUI running to preserve the insta counter
-    - If not, stop the GUI with "-"
+### Recommended
+- Full Monkey Knowledge (for Impoppable)
+- Map visual effects off (for consistency)
+- Default cursor size (for consistency)
 
-# USE AT YOUR OWN RISK
-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
-- Although it is not likely you will get flagged as cheating, it is not impossible
-- I am not responsible for any consequences from the use of this program
-- Use cautiously, and only in singleplayer for best practice
-- USE AT YOUR OWN RISK
+---
 
-# CAPABILITIES
-- Can play every expert map on either impoppable or easy
-    - Per-map difficulty selection by editing the config file, instructions in the file
-- Smart detection helps the loop to continue if you level up, fail, or get an advertisement
-    - Yes, there are ads for the DLC if you do not own them
-- Can automatically select and play the bonus map, or any other expert maps you want specified in the config file
-- Opens event boxes when enough resources are collected, and keeps track of each rarity insta you obtain in a GUI
-- Shows the current action being performed in the top right GUI
+## Instructions
 
-# NOTICE
+1. Download the latest release from the Releases section on the right side of the repository
+2. Extract the ZIP file
+3. (Optional) Open the config file in a text editor and adjust settings as needed
+4. Launch the game and navigate to the main menu shown below
 
-Some maps use cash drops to improve reliability. Even though you earn the money back, you may configure the settings however you want. There is a no cash drops preset configuration you can enable in the config file to earn maximum rewards while not using or buying any cash drops.
+<br>
+<img width="384" height="216" alt="mainmenu" src="https://github.com/user-attachments/assets/038d6da9-8ef8-4699-b2e5-23ca431a1483">
+<br>
 
-Maps that use cash drops on impoppable
-- bloody puddles
-- dark dungeons
-- glacial trail
-- tricky tracks
-- workshop
+5. Run `Start_Script.ahk` from the main menu
 
-No cash drop maps
-- dark castle
-- flooded valley
-- infernal
-- muddy puddles
-- ouch
-- quad
-- ravine
-- sanctuary
-- every map played on easy difficulty
+### Stopping the Script
+- Press `=` multiple times to stop active gameplay scripts
+- You can keep the GUI running to preserve the insta counter
+- Press `-` to fully close the GUI
 
-# EMULATING 2560x1440 RESOLUTION
+---
 
-If your monitor is lower resolution than the script’s hardcoded resolution (2560×1440), you can create a **custom/high resolution** using your GPU software. Below are instructions for NVIDIA, AMD, and Intel GPUs.
+## Capabilities
 
-| Step | NVIDIA (GeForce) | AMD (Radeon / Adrenalin) | Intel (Integrated / UHD) |
-|------|-----------------|--------------------------|--------------------------|
-| **1. Open GPU Control Panel** | Right-click desktop → **NVIDIA Control Panel** | Right-click desktop → **AMD Software / Adrenalin** → **Settings (gear)** | Right-click desktop → **Intel Graphics Command Center** |
-| **2. Go to Custom Resolution Section** | **Display → Change resolution → Customize… → Create Custom Resolution…** | **Display → Custom Resolutions → Create New** | **Display → Custom Resolutions → Add** |
-| **3. Set Resolution & Refresh Rate** | Horizontal: 2560, Vertical: 1440, Refresh: 60Hz, Timing: Automatic / CVT-RB | Horizontal: 2560, Vertical: 1440, Refresh: 60Hz, Timing: Automatic / CVT-RB | Horizontal: 2560, Vertical: 1440, Refresh: 60Hz, Timing: Automatic |
-| **4. Test Resolution** | Click **Test** → Confirm if screen works | Click **Save / Test** → Confirm if screen works | Click **Apply / Test** → Confirm if screen works |
-| **5. Apply & Set as Primary (Optional)** | Back in **Change resolution**, select new resolution → **Apply** | Back in **Display**, select new resolution → **Apply** | Back in **Display**, select new resolution → **Apply** |
-| **6. Set Windows Scaling** | Settings → System → Display → Scale = 100% | Settings → System → Display → Scale = 100% | Settings → System → Display → Scale = 100% |
-| **7. Run BTD6** | Launch BTD6 on the new resolution (use **Windowed Fullscreen** if needed) | Launch BTD6 on the new resolution (use **Windowed Fullscreen** if needed) | Launch BTD6 on the new resolution (use **Windowed Fullscreen** if needed) |
-| **Notes / Caveats** | If monitor is physically lower than resolution, image is downscaled; pixel-perfect placement still works | Same as NVIDIA; visuals may be slightly softer | Same as NVIDIA; visuals may be slightly softer |
+- Plays every expert map on either Impoppable or Easy
+  - Per-map difficulty configurable via the config file
+- Smart detection system:
+  - Handles leveling up, failures, and advertisements
+- Automatically selects and plays bonus maps or user-defined maps
+- Opens event boxes automatically when resources are available
+- Tracks insta-monkeys by rarity in a GUI
+- Displays current action in a top-right GUI overlay
 
-# COPYRIGHT
+---
 
-Copyright © 2026 Evan S.
+## Notice
+
+Some maps use cash drops to improve reliability. Although the cost is typically recovered, this behavior is configurable.
+
+A no-cash-drops preset is available in the config file for maximum efficiency without using consumables.
+
+### Maps That Use Cash Drops (Impoppable)
+- Bloody Puddles
+- Dark Dungeons
+- Glacial Trail
+- Tricky Tracks
+- Workshop
+
+### No Cash Drop Maps
+- Dark Castle
+- Flooded Valley
+- Infernal
+- Muddy Puddles
+- Ouch
+- Quad
+- Ravine
+- Sanctuary
+- All maps played on Easy difficulty
+
+---
+
+## Resolution Emulation (2560×1440)
+
+If your monitor does not support 2560×1440, you can create a custom resolution using your GPU software.
+
+| Step | NVIDIA (GeForce) | AMD (Adrenalin) | Intel (Integrated) |
+|------|------------------|-----------------|--------------------|
+| Open Control Panel | Right-click desktop → NVIDIA Control Panel | Right-click desktop → AMD Software → Settings | Right-click desktop → Intel Graphics Command Center |
+| Custom Resolution | Display → Change resolution → Customize → Create | Display → Custom Resolutions → Create New | Display → Custom Resolutions → Add |
+| Set Values | 2560×1440 @ 60Hz, Timing: CVT-RB | 2560×1440 @ 60Hz | 2560×1440 @ 60Hz |
+| Test | Click Test | Click Save/Test | Click Apply/Test |
+| Apply | Select new resolution → Apply | Select → Apply | Select → Apply |
+| Scaling | Set Windows scaling to 100% | Set Windows scaling to 100% | Set Windows scaling to 100% |
+| Run Game | Use Windowed Fullscreen if needed | Use Windowed Fullscreen if needed | Use Windowed Fullscreen if needed |
+
+Notes:
+- On lower-resolution monitors, the image will be downscaled
+- Pixel-perfect placements will still function correctly
+
+---
+
+## Use at Your Own Risk
+
+- This software is provided "as is", without warranty of any kind
+- Use of automation may violate game terms of service
+- There is a non-zero risk of being flagged
+- The author is not responsible for any consequences
+- Recommended for singleplayer use only
+
+---
+
+## Copyright
+
+Copyright © 2026 evsny24
 
 All rights reserved.
 
 This project is provided for personal and educational use only.  
 You may not copy, modify, distribute, sublicense, or use this project or any part of it for commercial purposes without explicit written permission from the author.
-
