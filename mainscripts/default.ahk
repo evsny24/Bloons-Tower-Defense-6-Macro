@@ -208,7 +208,7 @@ buycashdrop()
 	sleep 50
 	Click, Left, 2281, 653
 	sleep 1000
-	Click, Left, 532, 901
+	Click, Left, 300, 1119
 	sleep 500
 	Click, Left, 1900, 1187
 	sleep 500
