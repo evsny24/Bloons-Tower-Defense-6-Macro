@@ -75,7 +75,7 @@ If your monitor is lower resolution than the script’s hardcoded resolution (25
 
 | Step | NVIDIA (GeForce) | AMD (Radeon / Adrenalin) | Intel (Integrated / UHD) |
 |------|-----------------|--------------------------|--------------------------|
-| **1. Open GPU Control Panel** | Right-click desktop → **NVIDIA Control Panel** | Right-click desktop → **AMD Software / Adrenalin** → **Settings (gear)** | Right-click desktop → **Intel Graphics Command Center** |
+| **1. Open GPU Control Panel** | Right-click desktop → **NVIDIA Control Panel** | Right-click desktop → **AMD Software / Adrenalin** → **Settings (gear)** | Install **Intel Graphics Command Center** from Microsoft Store |
 | **2. Go to Custom Resolution Section** | **Display → Change resolution → Customize… → Create Custom Resolution…** | **Display → Custom Resolutions → Create New** | **Display → Custom Resolutions → Add** |
 | **3. Set Resolution & Refresh Rate** | Horizontal: 2560, Vertical: 1440, Refresh: 60Hz, Timing: Automatic / CVT-RB | Horizontal: 2560, Vertical: 1440, Refresh: 60Hz, Timing: Automatic / CVT-RB | Horizontal: 2560, Vertical: 1440, Refresh: 60Hz, Timing: Automatic |
 | **4. Test Resolution** | Click **Test** → Confirm if screen works | Click **Save / Test** → Confirm if screen works | Click **Apply / Test** → Confirm if screen works |
