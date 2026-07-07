@@ -7,7 +7,7 @@ DetectHiddenWindows, On
 UpdateStatus(step)
 {
 	DetectHiddenWindows, On
-    	WinGet, target_hwnd, ID, ScriptStatus  ; Your GUI window title
+    	WinGet, target_hwnd, ID, ScriptStatus
 
     	VarSetCapacity(copyDataStruct, A_PtrSize * 3, 0)			; Allocate COPYDATASTRUCT buffer: 3 pointers (dwData, cbData, lpData)
     	VarSetCapacity(wstr, (StrLen(step) + 1) * 2, 0)				; Allocate buffer for UTF-16 string (+1 for null terminator)
