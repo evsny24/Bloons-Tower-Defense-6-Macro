@@ -10,6 +10,7 @@ Required:
     - Some placements are pixel perfect, but don't worry; if your monitor is a lower resolution, you can emulate it. See below
 - Fast Track Mode enabled
     - It simply makes the process so much faster, but I am considering working around this in the future
+- Auto-start turned on
 - Default key binds
     - In settings, reset to default
 - Benjamin unlocked
