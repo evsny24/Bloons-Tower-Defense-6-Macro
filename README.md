@@ -22,7 +22,7 @@ Recommended:
 - default cursor size also for consistency
 
 # INSTRUCTIONS
-- Go to the latest release from the collumn on the right and download as zip. Extract the folder
+- Go to the latest release from the column on the right and download as zip. Extract the folder
 - If you wish to change the settings, open the config file in a text editor and follow directions there
 - Load game and navigate to menu screen seen below
 <br><br><img width="384" height="216" alt="mainmenu" src="https://github.com/user-attachments/assets/038d6da9-8ef8-4699-b2e5-23ca431a1483" /><br>
