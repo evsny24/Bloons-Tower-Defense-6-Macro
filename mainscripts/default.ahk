@@ -7,7 +7,7 @@ DetectHiddenWindows, On
 UpdateStatus(step)
 {
 	DetectHiddenWindows, On
-    	WinGet, target_hwnd, ID, ScriptStatus
+    	WinGet, target_hwnd, ID, ScriptStatus  ; Your GUI window title
 
     	VarSetCapacity(copyDataStruct, A_PtrSize * 3, 0)			; Allocate COPYDATASTRUCT buffer: 3 pointers (dwData, cbData, lpData)
     	VarSetCapacity(wstr, (StrLen(step) + 1) * 2, 0)				; Allocate buffer for UTF-16 string (+1 for null terminator)
@@ -26,9 +26,9 @@ UpdateStatus(step)
 upgradet1() 
 {
 	UpdateStatus("upgrading_path_1")
-	ImageSearch, x, y, 24, 537, 2207, 756, .\assets\upgradebuttonr1.png
+	ImageSearch, x, y, 24, 537, 2207, 756, *50 .\assets\upgradebuttonr1.png
 	if (ErrorLevel = 1)
-		ImageSearch, x, y, 24, 537, 2207, 756, .\assets\upgradebuttonl1.png
+		ImageSearch, x, y, 24, 537, 2207, 756, *50 .\assets\upgradebuttonl1.png
 	if (ErrorLevel = 0)
 		send {,}
 	return
@@ -37,9 +37,9 @@ upgradet1()
 upgradet2() 
 {
 	UpdateStatus("upgrading_path_2")
-	ImageSearch, x, y, 24, 741, 2207, 953, .\assets\upgradebuttonr2.png
+	ImageSearch, x, y, 24, 741, 2207, 953, *50 .\assets\upgradebuttonr2.png
 	if (ErrorLevel = 1)
-		ImageSearch, x, y, 24, 741, 2207, 953, .\assets\upgradebuttonl2.png
+		ImageSearch, x, y, 24, 741, 2207, 953, *50 .\assets\upgradebuttonl2.png
 	if (ErrorLevel = 0)
 		send {.}
 	return
@@ -48,9 +48,9 @@ upgradet2()
 upgradet3()
 {
 	UpdateStatus("upgrading_path_3")
-	ImageSearch, x, y, 24, 931, 2207, 1156, .\assets\upgradebuttonr3.png
+	ImageSearch, x, y, 24, 931, 2207, 1156, *50 .\assets\upgradebuttonr3.png
 	if (ErrorLevel = 1)
-		ImageSearch, x, y, 24, 931, 2207, 1156, .\assets\upgradebuttonl3.png
+		ImageSearch, x, y, 24, 931, 2207, 1156, *50 .\assets\upgradebuttonl3.png
 	if (ErrorLevel = 0)
 		send {/}
 	return
@@ -115,7 +115,7 @@ canaffordtower(hotkey)
 		sleep 500
 		MouseMove, 1000, 1000
 		send, %hotkey%
-		ImageSearch, x, y, 0, 0, 2560, 1440, .\assets\cancelplacement.png
+		ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\cancelplacement.png
 		if (ErrorLevel = 0)
 			break
 	}
@@ -127,7 +127,7 @@ waituntil(picture)
 	UpdateStatus("waiting_for_round")
 	loop
 	{
-		ImageSearch, x, y, 0, 0, 2560, 1440, .\assets\%picture%
+		ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\%picture%
 		if (ErrorLevel = 1)
 			continue
 		else
@@ -187,12 +187,12 @@ waitforload()
 {
 	UpdateStatus("waiting_for_load")
 	loop {
-	ImageSearch, x, y, 0, 0, 2560, 1440, .\assets\loading.png
+	ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\loading.png
 		if (ErrorLevel = 0)
 			break
 	}
 	loop {
-	ImageSearch, x, y, 0, 0, 2560, 1440, .\assets\loading.png
+	ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\loading.png
 		if (ErrorLevel = 1)
 			break
 	}
@@ -208,7 +208,8 @@ buycashdrop()
 	sleep 50
 	Click, Left, 2281, 653
 	sleep 1000
-	Click, Left, 300, 1119
+	ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\cashdrop.png
+	click, %x% %y%
 	sleep 500
 	Click, Left, 1900, 1187
 	sleep 500
@@ -237,12 +238,12 @@ UpdateStatus("wait_for_game_end")
 	loop
 		{
 		sleep 2000
-		ImageSearch, x, y, 0, 0, 2560, 1440, *20 .\assets\victory.png
+		ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\victory.png
 			if (ErrorLevel = 0)
 				{
 				loop
 					{
-					ImageSearch, x, y, 0, 0, 2560, 1440, .\assets\home.png
+					ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\home.png
 					if (ErrorLevel = 0)
 						{
 						click, %x% %y%
@@ -263,13 +264,13 @@ UpdateStatus("wait_for_game_end")
 }
 resetfailsafe()
 {
-	ImageSearch, x, y, 0, 0, 2560, 1440, *30 .\assets\defeat.png
+	ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\defeat.png
 		if (ErrorLevel = 0)
 			{	
 			UpdateStatus("failsafe_restarting")
 			UpdateStatus("!LOCK")
 			sleep 1000
-			ImageSearch, x, y, 0, 0, 2560, 1440, *30 .\assets\failhome.png
+			ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\failhome.png
 			click, %x% %y%
 
 			SplitPath, A_ScriptDir, , parentDir			;get the parent directory of this script
@@ -293,7 +294,7 @@ resetfailsafe()
 /*
 activatedruidabilityclosed()
 {
-	ImageSearch, a, b, 0, 0, 2560, 1440, *30 .\assets\druidabilityclosed.png
+	ImageSearch, a, b, 0, 0, 2560, 1440, *50 .\assets\druidabilityclosed.png
 		if (ErrorLevel = 0)
 			{
 				FileRead, currentStatus, .\textfiles\status_current.txt
@@ -309,7 +310,7 @@ activatedruidabilityclosed()
 }
 activatedruidabilityopened()
 {
-	ImageSearch, a, b, 0, 0, 2560, 1440, *30 .\assets\druidabilityopened.png
+	ImageSearch, a, b, 0, 0, 2560, 1440, *50 .\assets\druidabilityopened.png
 		if (ErrorLevel = 0)
 			{
 				FileRead, currentStatus, .\textfiles\status_current.txt
@@ -327,7 +328,7 @@ activatedruidabilityopened()
 
 levelup()
 {
-	ImageSearch, x, y, 0, 0, 2560, 1440, *30 .\assets\levelup.png
+	ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\levelup.png
 		if (ErrorLevel = 0)
 			{
 				FileRead, currentStatus, .\textfiles\status_current.txt
@@ -352,7 +353,7 @@ breaktrees()
 	sleep 200
 	loop
 	{
-		ImageSearch, x, y, 0, 0, 2560, 1440, .\assets\check1.png
+		ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\check1.png
 		if (ErrorLevel = 0)
 			{
 			click, %x% %y%
@@ -367,7 +368,7 @@ breaktrees()
 	sleep 200
 	loop
 	{
-		ImageSearch, x, y, 0, 0, 2560, 1440, .\assets\check2.png
+		ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\check2.png
 		if (ErrorLevel = 0)
 			{
 			click, %x% %y%
@@ -382,7 +383,7 @@ breaktrees()
 	sleep 200
 	loop
 	{
-		ImageSearch, x, y, 0, 0, 2560, 1440, .\assets\check3.png
+		ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\check3.png
 		if (ErrorLevel = 0)
 			{
 			click, %x% %y%
@@ -397,7 +398,7 @@ breaktrees()
 	sleep 200
 	loop
 	{
-		ImageSearch, x, y, 0, 0, 2560, 1440, .\assets\check4.png
+		ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\check4.png
 		if (ErrorLevel = 0)
 			{
 			click, %x% %y%
@@ -412,7 +413,7 @@ breaktrees()
 openboxes()
 {
 	UpdateStatus("opening_prize_boxes")
-	ImageSearch, x, y, 0, 0, 2560, 1440, *15 .\assets\play.png
+	ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\play.png
 	if (ErrorLevel = 1)
 		{
 		click, 1287, 925
@@ -506,7 +507,7 @@ openboxes()
 				click, %e%, %f%
 				sleep 200
 				}
-			ImageSearch, g, h, 0, 0, 2560, 1440, *15 .\assets\back.png
+			ImageSearch, g, h, 0, 0, 2560, 1440, *50 .\assets\back.png
 			if (ErrorLevel = 0)
 				{
 				click, %g%, %h%

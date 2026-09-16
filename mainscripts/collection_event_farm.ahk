@@ -17,23 +17,23 @@ sleep 1000
 openboxes()								; Check for boxes to open
 
 UpdateStatus("is_there_popup?")
-imagesearch, x, y, 0, 0, winW, winH, .\assets\dlcpopup.png		; Check for annoying popup ads for DLCs
+imagesearch, x, y, 0, 0, winW, winH, *50 .\assets\dlcpopup.png		; Check for annoying popup ads for DLCs
 if (ErrorLevel = 0)
 	click, %x% %y%
 
 UpdateStatus("equip_benjamin")						; Is benjamin equipped?
-imagesearch, x, y, 0, 0, winW, winH, .\assets\benjaminequipped.png
+imagesearch, x, y, 0, 0, winW, winH, *50 .\assets\benjaminequipped.png
 if (ErrorLevel = 1)	
 	{
-	imagesearch, x, y, 0, 0, winW, winH, .\assets\heroes.png	; Go select him if not
+	imagesearch, x, y, 0, 0, winW, winH, *50 .\assets\heroes.png	; Go select him if not
 	click, %x% %y%
 	sleep 500
 
-	imagesearch, x, y, 0, 0, winW, winH, .\assets\benjy.png
+	imagesearch, x, y, 0, 0, winW, winH, *50 .\assets\benjy.png
 	click, %x% %y%
 	sleep 200
 	
-	imagesearch, x, y, 0, 0, winW, winH, .\assets\select.png
+	imagesearch, x, y, 0, 0, winW, winH, *50 .\assets\select.png
 	click, %x% %y%
 	sleep 200
 
@@ -42,12 +42,12 @@ if (ErrorLevel = 1)
 	}
 
 UpdateStatus("select_play")						; Enter map selection screen
-imagesearch, x, y, 0, 0, winW, winH, .\assets\play.png
+imagesearch, x, y, 0, 0, winW, winH, *50 .\assets\play.png
 click, %x% %y%
 sleep 500
 
 UpdateStatus("select_expert")						; Click expert
-imagesearch, x, y, 0, 0, winW, winH, .\assets\expert.png
+imagesearch, x, y, 0, 0, winW, winH, *50 .\assets\expert.png
 click, %x% %y%
 MouseMove, 0, 0
 sleep 500
@@ -68,7 +68,7 @@ loop 3 {
 		if (ErrorLevel = 0)
 			goto, findmap
 	}
-imagesearch, e, f, 0, 0, 2560, 1440, .\assets\expert.png
+imagesearch, e, f, 0, 0, 2560, 1440, *50 .\assets\expert.png
 click, %e% %f%
 }
 
@@ -190,7 +190,7 @@ loop 3 {										; Find the map by switching pages until it is found
 		}
 	else 
 		{
-		imagesearch, e, f, 0, 0, 2560, 1440, .\assets\expert.png
+		imagesearch, e, f, 0, 0, 2560, 1440, *50 .\assets\expert.png
 		click, %e% %f%
 		}
 }
