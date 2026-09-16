@@ -7,7 +7,8 @@ Required:
 - AutoHotKey v1.1
     - Download from https://www.autohotkey.com
 - 2560x1440 Resolution
-    - Some placements are pixel perfect, but don't worry; if your monitor is a lower resolution, you can emulate it. See below
+    - If your resolution is higher, change to 2560x1440 in Windows display settings and make sure it shows that in BTD6 settings
+    - If your resolution is lower, it's okay! Scroll to bottom to see instructions for setting up super resolution
 - Fast Track Mode enabled
     - It simply makes the process so much faster, but I am considering working around this in the future
 - Auto-start turned on
