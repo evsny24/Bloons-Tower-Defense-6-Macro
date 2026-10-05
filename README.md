@@ -1,96 +1,79 @@
 # BTD6-Collection-Event-Macro
-This is a beginner friendly, easy-to-use autohotkey macro program that automates the gameplay of Bloons Tower Defense 6. It's main focus is completing expert maps on the hardest difficulty to gain the most amount of currency for the in-game collection events, where it will target bonus maps to get the maximum rewards.
 
-# REQUIREMENTS TO RUN:
+This is a beginner-friendly, easy-to-use AutoHotkey macro program that automates the gameplay of Bloons Tower Defense 6. Its primary focus is completing expert maps on the hardest difficulty to maximize currency acquisition for in-game collection events. The macro targets specific bonus maps to ensure the maximum rewards are obtained.
 
-Required:
-- AutoHotKey v1.1
-    - Download from https://www.autohotkey.com
-- 2560x1440 Resolution
-    - If your resolution is higher, change to 2560x1440 in Windows display settings and make sure it shows that in BTD6 settings
-    - If your resolution is lower, it's okay! Scroll to bottom to see instructions for setting up super resolution
-- Fast Track Mode enabled
-    - It simply makes the process so much faster, but I am considering working around this in the future
-- Auto-start turned on
-- Default key binds
-    - In settings, reset to default
-- Benjamin unlocked
-- At least one expert map unlocked, and optionally impoppable mode unlocked for maps you plan to play on that difficulty
-  
-Recommended:
-- full monkey knowledge for impoppable mode
-- map visual effects off for consistency
-- default cursor size also for consistency
+## Requirements
+### Required
+* **AutoHotkey v1.1**: Download from [https://www.autohotkey.com](https://www.autohotkey.com)
+* **Resolution**: 2560x1440
+    * Some placements require pixel-perfect accuracy. If your monitor has a lower resolution, you can emulate it using the instructions provided in the report below.
+* **Fast Track Mode**: Must be enabled. This significantly accelerates the process.
+* **Default Keybinds**: Ensure your in-game settings are reset to default.
+* **Benjamin**: Must be unlocked.
+* **Maps**: At least one expert map must be unlocked. For maps on Impoppable difficulty, the Impoppable mode must be unlocked.
 
-# INSTRUCTIONS
-- Clone the repository if you prefer doing that, or just go to the latest release from the column on the right and download as zip. Extract the folder
-- If you wish to change the settings, open the config file in a text editor and follow directions there
-- Load game and navigate to menu screen seen below
-<br><br><img width="384" height="216" alt="mainmenu" src="https://github.com/user-attachments/assets/038d6da9-8ef8-4699-b2e5-23ca431a1483" /><br>
-- Always run Start_Script.ahk from the main menu
-- If you would like to stop or run into an issue:
-    - Stop the scripts that are playing the game by pressing "=" a few times
-    - You may choose to stop the game scripts but keep the GUI running to preserve the insta counter
-    - If not, stop the GUI with "-"
+### Recommended
+* **Monkey Knowledge**: Full monkey knowledge is recommended for Impoppable mode.
+* **Visual Effects**: Turn off map visual effects for better script consistency.
+* **Cursor Size**: Use the default cursor size for consistent performance.
 
-# USE AT YOUR OWN RISK
-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
-- Although it is not likely you will get flagged as cheating, it is not impossible
-- I am not responsible for any consequences from the use of this program
-- Use cautiously, and only in singleplayer for best practice
-- USE AT YOUR OWN RISK
+## Instructions
+1. Download the latest release from the column on the right and extract the ZIP folder.
+2. To modify settings, open the `config.ini` file in a text editor and follow the provided directions.
+3. Launch the game and navigate to the main menu.
+4. Run `Start_Script.ahk` from the main menu.
+5. **Stopping the Script**:
+    * Press the `=` key multiple times to stop the game scripts.
+    * You may choose to stop only the game scripts while keeping the GUI active to maintain the instance counter.
+    * To fully stop the GUI, press the `-` key.
 
-# CAPABILITIES
-- Can play every expert map on either impoppable or easy
-    - Per-map difficulty selection by editing the config file, instructions in the file
-- Smart detection helps the loop to continue if you level up, fail, or get an advertisement
-    - Yes, there are ads for the DLC if you do not own them
-- Can automatically select and play the bonus map, or any other expert maps you want specified in the config file
-- Opens event boxes when enough resources are collected, and keeps track of each rarity insta you obtain in a GUI
-- Shows the current action being performed in the top right GUI
+## Capabilities
+* **Expert Maps**: Automates every expert map on either Impoppable or Easy difficulty. Difficulty selection is managed via the `config.ini` file.
+* **Smart Detection**: The macro includes logic to continue the loop even if you level up, experience a failure, or encounter advertisements.
+* **Bonus Maps**: Automatically selects and plays bonus maps or any other specific expert maps defined in the configuration.
+* **Event Management**: Automatically opens event boxes when sufficient resources are collected and tracks each rarity instance in the GUI.
+* **Live Status**: Displays the current action being performed in the top-right GUI.
 
-# NOTICE
+## Notices
+Certain maps utilize "cash drops" to improve script reliability. While these resources are eventually earned back, you may choose to disable them for maximum reward efficiency by selecting the "no cash drops" preset in the config file.
 
-Some maps use cash drops to improve reliability. Even though you earn the money back, you may configure the settings however you want. There is a no cash drops preset configuration you can enable in the config file to earn maximum rewards while not using or buying any cash drops.
+**Maps using cash drops on Impoppable:**
+* Bloody Puddles
+* Dark Dungeons
+* Glacial Trail
+* Tricky Tracks
+* Workshop
 
-Maps that use cash drops on impoppable
-- bloody puddles
-- dark dungeons
-- glacial trail
-- tricky tracks
-- workshop
+**Maps with no cash drops:**
+* Dark Castle
+* Flooded Valley
+* Infernal
+* Muddy Puddles
+* Ouch
+* Quad
+* Ravine
+* Sanctuary
+* All maps on Easy difficulty
 
-No cash drop maps
-- dark castle
-- flooded valley
-- infernal
-- muddy puddles
-- ouch
-- quad
-- ravine
-- sanctuary
-- every map played on easy difficulty
-
-# EMULATING 2560x1440 RESOLUTION
-
-If your monitor is lower resolution than the script’s hardcoded resolution (2560×1440), you can create a **custom/high resolution** using your GPU software. Below are instructions for NVIDIA, AMD, and Intel GPUs.
+## Emulating 2560x1440 Resolution
+If your monitor resolution is lower than the script's hardcoded 2560x1440 requirement, you can create a custom high resolution via your GPU software.
 
 | Step | NVIDIA (GeForce) | AMD (Radeon / Adrenalin) | Intel (Integrated / UHD) |
-|------|-----------------|--------------------------|--------------------------|
-| **1. Open GPU Control Panel** | Right-click desktop → **NVIDIA Control Panel** | Right-click desktop → **AMD Software / Adrenalin** → **Settings (gear)** | Install **Intel Graphics Command Center** from Microsoft Store |
-| **2. Go to Custom Resolution Section** | **Display → Change resolution → Customize… → Create Custom Resolution…** | **Display → Custom Resolutions → Create New** | **Display → Custom Resolutions → Add** |
-| **3. Set Resolution & Refresh Rate** | Horizontal: 2560, Vertical: 1440, Refresh: 60Hz, Timing: Automatic / CVT-RB | Horizontal: 2560, Vertical: 1440, Refresh: 60Hz, Timing: Automatic / CVT-RB | Horizontal: 2560, Vertical: 1440, Refresh: 60Hz, Timing: Automatic |
-| **4. Test Resolution** | Click **Test** → Confirm if screen works | Click **Save / Test** → Confirm if screen works | Click **Apply / Test** → Confirm if screen works |
-| **5. Apply & Set as Primary (Optional)** | Back in **Change resolution**, select new resolution → **Apply** | Back in **Display**, select new resolution → **Apply** | Back in **Display**, select new resolution → **Apply** |
-| **6. Set Windows Scaling** | Settings → System → Display → Scale = 100% | Settings → System → Display → Scale = 100% | Settings → System → Display → Scale = 100% |
-| **7. Run BTD6** | Launch BTD6 on the new resolution (use **Windowed Fullscreen** if needed) | Launch BTD6 on the new resolution (use **Windowed Fullscreen** if needed) | Launch BTD6 on the new resolution (use **Windowed Fullscreen** if needed) |
-| **Notes / Caveats** | If monitor is physically lower than resolution, image is downscaled; pixel-perfect placement still works | Same as NVIDIA; visuals may be slightly softer | Same as NVIDIA; visuals may be slightly softer |
+| :--- | :--- | :--- | :--- |
+| **1. Open Panel** | Right-click desktop -> NVIDIA Control Panel | Right-click desktop -> AMD Software -> Settings | Install Intel Graphics Command Center from MS Store |
+| **2. Custom Resolution** | Display -> Change resolution -> Customize -> Create Custom Resolution | Display -> Custom Resolutions -> Create New | Display -> Custom Resolutions -> Add |
+| **3. Set Specs** | 2560x1440 @ 60Hz (Timing: Automatic/CVT-RB) | 2560x1440 @ 60Hz (Timing: Automatic/CVT-RB) | 2560x1440 @ 60Hz (Timing: Automatic) |
+| **4. Test** | Click Test -> Confirm | Click Save/Test -> Confirm | Click Apply/Test -> Confirm |
+| **5. Set Primary** | Select new resolution -> Apply | Select new resolution -> Apply | Select new resolution -> Apply |
+| **6. Scaling** | System -> Display -> Scale = 100% | System -> Display -> Scale = 100% | System -> Display -> Scale = 100% |
+| **7. Launch** | Run BTD6 (Windowed Fullscreen recommended) | Run BTD6 (Windowed Fullscreen recommended) | Run BTD6 (Windowed Fullscreen recommended) |
 
-# COPYRIGHT
+## Disclaimer
+**USE AT YOUR OWN RISK.**
+The software is provided "as is" without warranty of any kind, express or implied. While it is unlikely you will be flagged for cheating, it is not impossible. The author is not responsible for any consequences resulting from the use of this program. Use cautiously and only in single-player mode for best practice.
 
+## Copyright
 Copyright © 2026 evsny24.
-
 All rights reserved.
 
-This project is provided for personal and educational use only.  
-You may not copy, modify, distribute, sublicense, or use this project or any part of it for commercial purposes without explicit written permission from the author.
+This project is provided for personal and educational use only. You may not copy, modify, distribute, sublicense, or use this project or any part of it for commercial purposes without explicit written permission from the author.
