@@ -84,10 +84,20 @@ deselect()
 
 waituntil("r44sanctuary.png")
 
-Click, 1113, 258			;upgrade village to 2-0-3
+Click, 1113, 258			;upgrade village to 2-0-2
+waitforupgrade1()
+waitforupgrade1()
+deselect()
+
+waituntil("r49sanctuary.png")
+
+sleep 6390
+Click, 267, 1383			;use benjamin ability so dont die
+sleep 200
+
+Click, 1305, 212
+sleep 200				;upgrade village to 2-0-3
 waitforupgrade3()
-waitforupgrade1()
-waitforupgrade1()
 deselect()
 
 canaffordtower("f")			;get alch 3-2-0
