@@ -201,21 +201,26 @@ waitforload()
 buycashdrop()
 {	
 	UpdateStatus("buying_cash_drop")
-	sleep 200
-	Click, Left, 2278, 1352
 	sleep 500
-	Click, Left, 2350, 14
-	sleep 50
-	Click, Left, 2281, 653
-	sleep 1000
+	ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\powers.png
+	click, %x% %y%
+	sleep 500
+	Click, Left, 2307, 12
+	sleep 500
+	ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\powersheader.png
+	click, %x% %y%
+	sleep 500
 	ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\cashdrop.png
 	click, %x% %y%
 	sleep 500
-	Click, Left, 1900, 1187
+	ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\addfor.png
+	click, %x% %y%
 	sleep 500
-	click, left, 98, 72
+	ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\back.png
+	click, %x% %y%
 	sleep 500
-	Click, Left, 2278, 1352
+	ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\monke.png
+	click, %x% %y%
 	sleep 200
 }
 usecashdrop()
