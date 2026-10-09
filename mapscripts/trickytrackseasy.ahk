@@ -34,6 +34,8 @@ village()
 ;-------------START-------------
 
 WinActivate, BloonsTD6
+deselect()
+deselect()
 
 send {z}
 sniper()

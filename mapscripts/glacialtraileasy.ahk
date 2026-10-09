@@ -33,6 +33,9 @@ ace()
 ;--------------------------START-------------------------------------
 
 WinActivate, BloonsTD6
+deselect()
+deselect()
+
 send {q}
 dart()
 dart()

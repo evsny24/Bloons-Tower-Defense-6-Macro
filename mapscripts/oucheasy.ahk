@@ -28,6 +28,8 @@ ace()
 ;--------------------------START-------------------------------------
 
 WinActivate, BloonsTD6
+deselect()
+deselect()
 
 Click, Left, 2287, 300
 ben()

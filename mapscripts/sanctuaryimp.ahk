@@ -11,6 +11,7 @@ CoordMode, Pixel, Screen
 
 WinActivate, BloonsTD6
 deselect()
+deselect()
 sleep 1000
 
 Click, 2282, 301			;get ben

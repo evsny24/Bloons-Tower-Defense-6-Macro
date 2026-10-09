@@ -74,6 +74,7 @@ hover()
 
 WinActivate, BloonsTD6
 deselect()
+deselect()
 sleep 1000
 
 Click, Left, 2280, 300

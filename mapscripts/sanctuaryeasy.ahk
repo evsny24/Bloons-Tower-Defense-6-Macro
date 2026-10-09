@@ -33,6 +33,8 @@ heli()
 ;-------------START-------------
 
 WinActivate, BloonsTD6
+deselect()
+deselect()
 
 Click, Left, 2279, 277
 ben()

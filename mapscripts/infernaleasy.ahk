@@ -28,6 +28,8 @@ sniper()
 ;---------------START-------------
 
 WinActivate, BloonsTD6
+deselect()
+deselect()
 
 MouseClick, Left, 2283, 297
 ben()

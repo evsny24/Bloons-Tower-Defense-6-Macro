@@ -134,6 +134,7 @@ glue2() {
 
 WinActivate, BloonsTD6
 deselect()
+deselect()
 sleep 1000
 
 desperado1()

@@ -109,6 +109,7 @@ heli()
 
 WinActivate, BloonsTD6
 deselect()
+deselect()
 sleep 1000
 
 buycashdrop()				;comment this line if you don't need to buy cash drops

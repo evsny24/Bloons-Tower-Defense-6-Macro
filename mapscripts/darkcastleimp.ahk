@@ -84,6 +84,7 @@ altbreak()
 
 WinActivate, BloonsTD6
 altbreak()
+altbreak()
 sleep 1000
 
 send {x}
