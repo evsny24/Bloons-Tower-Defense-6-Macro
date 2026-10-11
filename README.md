@@ -41,7 +41,6 @@ Certain maps utilize "cash drops" to improve script reliability. While these res
 * Bloody Puddles
 * Dark Dungeons
 * Glacial Trail
-* Tricky Tracks
 * Workshop
 
 **Maps with no cash drops:**
@@ -49,6 +48,7 @@ Certain maps utilize "cash drops" to improve script reliability. While these res
 * Flooded Valley
 * Infernal
 * Muddy Puddles
+* Tricky Tracks
 * Ouch
 * Quad
 * Ravine
