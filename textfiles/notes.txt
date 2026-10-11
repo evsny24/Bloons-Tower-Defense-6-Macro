@@ -2,7 +2,6 @@
 - bloody puddles
 - dark dungeons
 - glacial trail
-- tricky tracks
 - workshop
 ====No=cash=drop=maps==========================================
 - dark castle
@@ -12,5 +11,6 @@
 - ouch
 - quad
 - ravine
+- tricky tracks
 - sanctuary
 - all easy maps
