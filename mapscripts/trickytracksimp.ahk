@@ -7,129 +7,126 @@ CoordMode, Pixel, Screen
 ben() {
 	MouseClick, Left, 2281, 285
 	sleep 200
-	MouseClick, Left, 2135, 581
-	sleep 200
-}
-desperado1() {
-	MouseClick, Left, 2445, 828
-	sleep 200
-	MouseClick, Left, 850, 728
-	sleep 200
-}
-clickdesperado1() {
-	MouseClick, Left, 850, 728
-	sleep 200
-}
-desperado2() {
-	MouseClick, Left, 2445, 828
-	sleep 200
-	MouseClick, Left, 1414, 746
+	MouseClick, Left, 1771, 1017
 	sleep 200
 }
 dart1() {
-	MouseClick, Left, 926, 680
+	MouseClick, Left, 871, 301
+	sleep 200
+}
+dart2() {
+	MouseClick, Left, 1076, 582
+	sleep 200
+}
+dart3() {
+	MouseClick, Left, 1387, 800
 	sleep 200
 }
 boomer1() {
-	MouseClick, Left, 1070, 547
+	MouseClick, Left, 1149, 528
 	sleep 200
 }
 boomer2() {
-	MouseClick, Left, 1341, 807
+	MouseClick, Left, 1384, 686
 	sleep 200
 }
-wizard1() {
-	MouseClick, Left, 1242, 756
+boomer3() {
+	MouseClick, Left, 834, 738
 	sleep 200
 }
-wizard2() {
-	MouseClick, Left, 1012, 620
+bomb1() {
+	MouseClick, Left, 1393, 703
 	sleep 200
 }
-druid1() {
-	MouseClick, Left, 1325, 704
+bomb2() {
+	MouseClick, Left, 1075, 869
 	sleep 200
 }
-druid2() {
-	MouseClick, Left, 1248, 845
+alchemist1() {
+	MouseClick, Left, 997, 915
 	sleep 200
 }
-sniper1() {
-	MouseClick, Left, 2126, 754
+alchemist2() {
+	MouseClick, Left, 899, 587
 	sleep 200
 }
-sniper2() {
-	MouseClick, Left, 2044, 812
+alchemist3() {
+	MouseClick, Left, 1210, 919
 	sleep 200
 }
-village1() {
-	MouseClick, Left, 1549, 1061
+alchemist4() {
+	MouseClick, Left, 1295, 1137
 	sleep 200
 }
-village2() {
-	MouseClick, Left, 1132, 896
+ice1() {
+	MouseClick, Left, 1059, 507
 	sleep 200
 }
-farm1() {
-	MouseClick, Left, 2071, 1188
-	sleep 200
-}
-farm2() {
-	MouseClick, Left, 1853, 1308
-	sleep 200
-}
-mermonkey1() {
-	MouseClick, Left, 736, 380
-	sleep 200
-}
-mermonkey2() {
-	MouseClick, Left, 869, 584
-	sleep 200
-}
-mermonkey3() {
-	MouseClick, Left, 1597, 945
-	sleep 200
-}
-mermonkey4() {
-	MouseClick, Left, 1413, 1071
-	sleep 200
-}
-mermonkey5() {
-	MouseClick, Left, 1292, 1150
-	sleep 200
-}
-mermonkey6() {
-	MouseClick, Left, 1405, 1172
-	sleep 200
-}
-mermonkey7() {
-	MouseClick, Left, 1758, 1002
-	sleep 200
-}
-mermonkey8() {
-	MouseClick, Left, 1847, 939
-	sleep 200
-}
-mermonkey9() {
-	MouseClick, Left, 1286, 1251
-	sleep 200
-}
-mermonkey10() {
-	MouseClick, Left, 1173, 1233
-	sleep 200
-}
-sfactory() {
-	MouseClick, Left, 1023, 967
+ice2() {
+	MouseClick, Left, 1378, 783
 	sleep 200
 }
 glue1() {
-	MouseClick, Left, 1173, 515
+	MouseClick, Left, 1089, 999
 	sleep 200
 }
 glue2() {
-	MouseClick, Left, 1001, 1052
+	MouseClick, Left, 911, 692
 	sleep 200
 }
+tack1() {
+	MouseClick, Left, 982, 542
+	sleep 200
+}
+tack2() {
+	MouseClick, Left, 1308, 834
+	sleep 200
+}
+tack3() {
+	MouseClick, Left, 1383, 1083
+	sleep 200
+}
+sniper1() {
+	MouseClick, Left, 2143, 739
+	sleep 200
+}
+village1() {
+	MouseClick, Left, 1188, 815
+	sleep 200
+}
+village2() {
+	MouseClick, Left, 974, 1044
+	sleep 200
+}
+mermonkey1() {
+	MouseClick, Left, 761, 364
+	sleep 200
+}
+mermonkey2() {
+	MouseClick, Left, 661, 414
+	sleep 200
+}
+mermonkey3() {
+	MouseClick, Left, 987, 629
+	sleep 200
+}
+mermonkey4() {
+	MouseClick, Left, 1295, 836
+	sleep 200
+}
+mermonkey5() {
+	MouseClick, Left, 1292, 736
+	sleep 200
+}
+mermonkey6() {
+	MouseClick, Left, 1466, 1033
+	sleep 200
+}
+mermonkey7() {
+	MouseClick, Left, 1559, 972
+	sleep 200
+}
+
 ;-------------START-------------
 
 WinActivate, BloonsTD6
@@ -137,45 +134,74 @@ deselect()
 deselect()
 sleep 1000
 
-desperado1()
-desperado2()
+ben()
 send {q}
 dart1()
-send {w}
-boomer2()
-send {z}
-sniper1()
-sniper1()
-upgradet1()
-targetsmart()
-deselect()
+send {q}
+dart2()
+send {q}
+dart3()
 send {o}
 mermonkey1()
 send {o}
 mermonkey2()
 send {o}
 mermonkey3()
-send {a}
-wizard1()
-wizard1()
+mermonkey3()
+upgradet3()
+deselect()
+send {o}
+mermonkey4()
+send {o}
+mermonkey5()
+send {o}
+mermonkey6()
+send {o}
+mermonkey7()
+send {w}
+boomer1()
+boomer1()
 upgradet1()
 upgradet1()
 upgradet1()
 upgradet3()
 upgradet3()
 deselect()
-send {g}
-druid1()
-deselect()
-buycashdrop()
 
 startgame()
 
-usecashdrop()
-ben()
+canaffordtower("z")
+sniper1()
+sniper1()
+waitforupgrade1()
+targetsmart()
+deselect()
 
 mermonkey1()
 waitforupgrade3()
+deselect()
+
+mermonkey4()
+waitforupgrade3()
+deselect()
+
+mermonkey7()
+waitforupgrade3()
+deselect()
+
+boomer1()
+waitforupgrade1()
+deselect()
+
+mermonkey2()
+waitforupgrade3()
+deselect()
+
+mermonkey5()
+waitforupgrade3()
+deselect()
+
+mermonkey6()
 waitforupgrade3()
 deselect()
 
@@ -183,197 +209,220 @@ sniper1()
 waitforupgrade2()
 deselect()
 
-canaffordtower("g")
-druid2()
-
-canaffordtower("a")
-wizard2()
-wizard2()
+canaffordtower("e")
+bomb1()
+bomb1()
 waitforupgrade2()
-waitforupgrade3()
-waitforupgrade3()
+waitforupgrade2()
 waitforupgrade2()
 waitforupgrade2()
 deselect()
 
-mermonkey2()
-waitforupgrade1()
-waitforupgrade1()
-waitforupgrade1()
-waitforupgrade3()
-waitforupgrade3()
-deselect()
+waituntil("r40trickytracks.png")
 
-canaffordtower("z")
-sniper2()
-sniper2()
-waitforupgrade2()
-waitforupgrade2()
-waitforupgrade3()
-waitforupgrade3()
-click, 510, 406 	;target camos
-deselect()
+sleep 5000
+
+mermonkey4()
+send {backspace}
+
+bomb1()
+send {backspace}
 
 canaffordtower("k")
 village1()
 village1()
+waitforupgrade1()
+waitforupgrade2()
+waitforupgrade2()
+waitforupgrade1()
+waitforupgrade1()
+waitforupgrade1()
+deselect()
+
+canaffordtower("e")
+bomb2()
+bomb2()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade2()
+waitforupgrade2()
+waitforupgrade3()
+deselect()
+
+canaffordtower("f")
+alchemist1()
+alchemist1()
+waitforupgrade1()
+waitforupgrade1()
+waitforupgrade1()
+waitforupgrade2()
+waitforupgrade2()
+deselect()
+
+canaffordtower("t")
+ice1()
+ice1()
+waitforupgrade1()
+waitforupgrade1()
+waitforupgrade2()
+waitforupgrade1()
+waitforupgrade1()
+deselect()
+
+canaffordtower("r")
+tack1()
+tack1()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade1()
+waitforupgrade1()
+waitforupgrade3()
+waitforupgrade3()
+deselect()
+
+dart3()
+send {backspace}
+
+canaffordtower("r")
+tack2()
+tack2()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade1()
+waitforupgrade1()
 waitforupgrade3()
 waitforupgrade3()
 deselect()
 
 mermonkey3()
-waitforupgrade3()
-waitforupgrade3()
-deselect()
-
-canaffordtower("o")
-mermonkey4()
-mermonkey4()
-waitforupgrade3()
-waitforupgrade3()
-deselect()
-
-canaffordtower("o")
-mermonkey5()
-mermonkey5()
-waitforupgrade3()
-waitforupgrade3()
-deselect()
-
-druid2()
 waitforupgrade1()
-waitforupgrade2()
-waitforupgrade2()
-waitforupgrade2()
+waitforupgrade1()
+waitforupgrade1()
+waitforupgrade1()
+waitforupgrade3()
+deselect()
+
+mermonkey5()
+waitforupgrade1()
+waitforupgrade1()
+waitforupgrade1()
+waitforupgrade1()
+waitforupgrade3()
+deselect()
+
+sniper1()
+send {backspace}
+
+mermonkey1()
+waitforupgrade3()
 deselect()
 
 mermonkey2()
+waitforupgrade3()
+deselect()
+
+mermonkey6()
+waitforupgrade3()
+deselect()
+
+mermonkey7()
+waitforupgrade3()
+deselect()
+
+canaffordtower("t")
+ice2()
+ice2()
+waitforupgrade1()
+waitforupgrade1()
+waitforupgrade2()
+waitforupgrade1()
 waitforupgrade1()
 deselect()
 
-canaffordtower("h")
-farm1()
-farm1()
-waitforupgrade3()
-waitforupgrade3()
-waitforupgrade3()
-waitforupgrade2()
-waitforupgrade2()
-deselect()
-
-canaffordtower("o")
-mermonkey6()
-mermonkey6()
-waitforupgrade3()
-waitforupgrade3()
-deselect()
-
-village1()
+canaffordtower("f")
+alchemist2()
+alchemist2()
 waitforupgrade1()
-deselect()
-
-canaffordtower("o")
-mermonkey7()
-mermonkey7()
-waitforupgrade3()
-waitforupgrade3()
-deselect()
-
-canaffordtower("o")
-mermonkey8()
-mermonkey8()
-waitforupgrade3()
-waitforupgrade3()
-deselect()
-
-canaffordtower("o")
-mermonkey9()
-mermonkey9()
-waitforupgrade3()
-waitforupgrade3()
-deselect()
-
-canaffordtower("o")
-mermonkey10()
-mermonkey10()
-waitforupgrade3()
-waitforupgrade3()
-deselect()
-
-canaffordtower("h")
-farm2()
-farm2()
-waitforupgrade3()
-waitforupgrade3()
-waitforupgrade3()
+waitforupgrade1()
+waitforupgrade1()
 waitforupgrade2()
 waitforupgrade2()
 deselect()
 
-wizard1()
+canaffordtower("f")
+alchemist3()
+alchemist3()
+waitforupgrade1()
+waitforupgrade1()
+waitforupgrade1()
+waitforupgrade2()
+waitforupgrade2()
+deselect()
+
+bomb2()
+waitforupgrade3()
+deselect()
+
+ice1()
 waitforupgrade1()
 deselect()
 
 canaffordtower("k")
 village2()
 village2()
-waitforupgrade1()
-waitforupgrade1()
-deselect()
-
-druid2()
-waitforupgrade2()
-waitforupgrade2()
-waitforupgrade1()
-deselect()
-
-village2()
-waitforupgrade2()
-waitforupgrade2()
-deselect()
-
-canaffordtower("j")
-sfactory()
-sfactory()
-waitforupgrade1()
-waitforupgrade1()
-waitforupgrade2()
-waitforupgrade2()
 waitforupgrade2()
 waitforupgrade2()
 waitforupgrade2()
 deselect()
 
-wizard1()
-waitforupgrade1()
-deselect()
-
-village2()
-waitforupgrade2()
-deselect()
-
-clickdesperado1()
-waitforupgrade2()
-waitforupgrade2()
-waitforupgrade3()
-waitforupgrade3()
-waitforupgrade3()
-waitforupgrade3()
-waitforupgrade3()
-deselect()
-
-canaffordtower("w")
-boomer1()
-boomer1()
+canaffordtower("y")
+glue1()
+glue1()
 targetsmart()
 waitforupgrade3()
 waitforupgrade3()
 waitforupgrade3()
+waitforupgrade2()
+waitforupgrade2()
 waitforupgrade3()
+deselect()
+
+canaffordtower("y")
+glue2()
+glue2()
+targetsmart()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade2()
+waitforupgrade2()
+waitforupgrade3()
+deselect()
+
+canaffordtower("r")
+tack3()
+tack3()
+waitforupgrade3()
+waitforupgrade3()
+waitforupgrade1()
+waitforupgrade1()
+waitforupgrade3()
+waitforupgrade3()
+deselect()
+
+canaffordtower("f")
+alchemist4()
+alchemist4()
+waitforupgrade1()
+waitforupgrade1()
+waitforupgrade1()
 waitforupgrade2()
 waitforupgrade2()
 deselect()
 
+canaffordtower("w")
+boomer2()
 boomer2()
 targetsmart()
 waitforupgrade3()
@@ -384,9 +433,10 @@ waitforupgrade2()
 waitforupgrade2()
 deselect()
 
-canaffordtower("y")
-glue1()
-glue1()
+canaffordtower("w")
+boomer3()
+boomer3()
+targetsmart()
 waitforupgrade3()
 waitforupgrade3()
 waitforupgrade3()
@@ -395,23 +445,18 @@ waitforupgrade2()
 waitforupgrade2()
 deselect()
 
-canaffordtower("y")
-glue2()
-glue2()
-waitforupgrade3()
-waitforupgrade3()
-waitforupgrade3()
-waitforupgrade3()
-waitforupgrade2()
-waitforupgrade2()
+village1()
+waitforupgrade1()
 deselect()
 
-sniper1()
+mermonkey5()
 waitforupgrade1()
-waitforupgrade1()
-waitforupgrade1()
-waitforupgrade2()
 deselect()
+
+tack2()
+waitforupgrade3()
+deselect()
+
 
 backtomainmenu()
 
