@@ -5,8 +5,8 @@ SetWorkingDir ..\
 
 configPath := ".\config.ini"
 allThumbnails := ["bloodypuddles", "darkdungeons", "glacialtrail", "workshop", "trickytracks", "darkcastle", "floodedvalley", "infernal", "muddypuddles", "ouch", "quad", "ravine", "sanctuary"]
-cashThumbnails := ["bloodypuddles", "darkdungeons", "glacialtrail", "workshop", "trickytracks"]
-noCashThumbnails := ["darkcastle", "floodedvalley", "infernal", "muddypuddles", "ouch", "quad", "ravine", "sanctuary"]
+cashThumbnails := ["bloodypuddles", "darkdungeons", "glacialtrail", "workshop"]
+noCashThumbnails := ["darkcastle", "floodedvalley", "trickytracks", "infernal", "muddypuddles", "ouch", "quad", "ravine", "sanctuary"]
 
 WinActivate, BloonsTD6
 WinGetActiveStats, winT, winW, winH, winX, winY
