@@ -159,10 +159,11 @@ waitforupgrade2()
 waitforupgrade2()
 deselect()
 
+waituntil("r91sanctuary.png")
 canaffordtower("j")
-Click, 1717, 1202			;get sfactory 2-5-0
+Click, 1708, 1192			;get sfactory 2-5-0
 sleep 100
-Click, 1717, 1202
+Click, 1708, 1192
 waitforupgrade1()
 waitforupgrade1()
 waitforupgrade2()
