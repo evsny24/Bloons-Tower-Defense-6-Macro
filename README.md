@@ -24,9 +24,9 @@ This is a beginner-friendly, easy-to-use AutoHotkey macro program that automates
 3. Launch the game and navigate to the main menu.
 4. Run `Start_Script.ahk` from the main menu.
 5. **Stopping the Script**:
-    * Press the `=` key multiple times to stop the game scripts.
+    * Press the `=` key to stop the map and main scripts.
+    * To stop the GUI, press the `-` key. This will reset the counters.
     * You may choose to stop only the game scripts while keeping the GUI active to maintain the instance counter.
-    * To fully stop the GUI, press the `-` key.
 
 ## Capabilities
 * **Expert Maps**: Automates every expert map on either Impoppable or Easy difficulty. Difficulty selection is managed via the `config.ini` file.
