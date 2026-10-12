@@ -26,7 +26,7 @@ This is a beginner-friendly, easy-to-use AutoHotkey macro program that automates
 5. **Stopping the Script**:
     * Press the `=` key to stop the map and main scripts.
     * To stop the GUI, press the `-` key. This will reset the counters.
-    * You may choose to stop only the game scripts while keeping the GUI active to maintain the instance counter.
+    * You may choose to stop only the game scripts while keeping the GUI active to maintain the insta-monkey counter.
 
 ## Capabilities
 * **Expert Maps**: Automates every expert map on either Impoppable or Easy difficulty. Difficulty selection is managed via the `config.ini` file.
