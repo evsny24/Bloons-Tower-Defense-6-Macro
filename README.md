@@ -7,8 +7,8 @@ This is a beginner-friendly, easy-to-use AutoHotkey macro program that automates
 * **AutoHotkey v1.1**: Download from [https://www.autohotkey.com](https://www.autohotkey.com)
 * **Resolution**: 2560x1440
     * Some placements require pixel-perfect accuracy. If your monitor has a lower resolution, you can emulate it using the instructions provided in the report below.
-* **Fast Track Mode**: Must be enabled. This significantly accelerates the process.
-* **Default Keybinds**: Ensure your in-game settings are reset to default.
+* **Fast Track Mode**: Must be enabled. This significantly accelerates the process and the script is not programmed to work without it.
+* **Default Keybinds**: Ensure your in-game keybind settings are reset to default.
 * **Benjamin**: Must be unlocked.
 * **Maps**: At least one expert map must be unlocked. For maps on Impoppable difficulty, the Impoppable mode must be unlocked.
 
@@ -29,14 +29,14 @@ This is a beginner-friendly, easy-to-use AutoHotkey macro program that automates
     * You may choose to stop only the game scripts while keeping the GUI active to maintain the insta-monkey counter.
 
 ## Capabilities
-* **Expert Maps**: Automates every expert map on either Impoppable or Easy difficulty. Difficulty selection is managed via the `config.ini` file.
-* **Smart Detection**: The macro includes logic to continue the loop even if you level up, experience a failure, or encounter advertisements.
+* **Expert Maps**: Automates every expert map on both Impoppable and Easy difficulties. Difficulty selection is managed via the `config.ini` file.
+* **Smart Detection**: The macro includes logic to continue the loop even if you level up, the script fails a map, or a DLC advertisement pops up.
 * **Bonus Maps**: Automatically selects and plays bonus maps or any other specific expert maps defined in the configuration.
-* **Event Management**: Automatically opens event boxes when sufficient resources are collected and tracks each rarity instance in the GUI.
+* **Event Management**: Automatically opens event boxes when sufficient resources are collected and tracks each rarity insta-monkey in the GUI.
 * **Live Status**: Displays the current action being performed in the top-right GUI.
 
 ## Notices
-Certain maps utilize "cash drops" to improve script reliability. While these resources are eventually earned back, you may choose to disable them for maximum reward efficiency by selecting the "no cash drops" preset in the config file.
+Certain maps utilize "cash drops" to improve script reliability. While the amount of monkey money you earn is greater than the cost of the drop, you may choose to disable them for maximum monkey money efficiency by selecting the "no cash drops" preset in the config file.
 
 **Maps using cash drops on Impoppable:**
 * Bloody Puddles
