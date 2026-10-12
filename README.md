@@ -16,7 +16,7 @@ This is a beginner-friendly, easy-to-use AutoHotkey macro program that automates
 * **Monkey Knowledge**: Full monkey knowledge is recommended for Impoppable mode.
 * **Visual Effects**: Turn off map visual effects for better script consistency.
 * **Cursor Size**: Use the default cursor size for consistent performance.
-* **Windoe Scaling**: Use 100% Windows scaling, otherwise GUIs may be too big/small.
+* **Window Scaling**: Use 100% Windows scaling, otherwise GUIs may be too big/small.
 
 ## Instructions
 1. Download the latest release from the column on the right and extract the ZIP folder.
