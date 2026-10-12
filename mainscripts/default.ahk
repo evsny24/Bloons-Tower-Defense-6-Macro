@@ -274,20 +274,20 @@ resetfailsafe()
 			{	
 			UpdateStatus("failsafe_restarting")
 			UpdateStatus("!LOCK")
-			sleep 1000
-			ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\failhome.png
-			click, %x% %y%
+			loop
+			{
+				ImageSearch, x, y, 0, 0, 2560, 1440, *50 .\assets\failhome.png
+                                if (ErrorLevel = 0)
+					{
+					click, %x% %y%
+					break
+					}
+				sleep 500
+			}
 
-			SplitPath, A_ScriptDir, , parentDir			;get the parent directory of this script
-			targetDir := parentDir . "\mapscripts\"			;build path to mapscripts
-			WinGet, idList, List, ahk_exe AutoHotkey.exe		;get a list of all running AutoHotkey windows
-			Loop, %idList%						;loop through each one
-				{
-   				id := idList%A_Index%
-   			 	WinGetTitle, winTitle, ahk_id %id%
-   			 	if (InStr(winTitle, targetDir) == 1 && InStr(winTitle, ".ahk"))
-     					WinKill, ahk_id %id%			;if start with targetDir and is ahk, close it
-				}
+			send {=}
+			sleep 50
+			send {=}
 
 			waitforload()
 			reload

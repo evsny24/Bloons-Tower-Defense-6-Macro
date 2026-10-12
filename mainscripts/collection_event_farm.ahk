@@ -208,4 +208,6 @@ loop											; Do not need break because script is supposed to reload after ma
 	levelup()
 }
 
+#Inputlevel, 1
 =::ExitApp
+#Inputlevel, 0
