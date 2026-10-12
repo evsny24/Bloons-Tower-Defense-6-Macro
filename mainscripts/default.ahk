@@ -289,7 +289,7 @@ resetfailsafe()
      					WinKill, ahk_id %id%			;if start with targetDir and is ahk, close it
 				}
 
-			sleep 5000
+			waitforload()
 			reload
 			}
 }
