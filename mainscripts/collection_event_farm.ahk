@@ -21,6 +21,10 @@ imagesearch, x, y, 0, 0, winW, winH, *50 .\assets\dlcpopup.png		; Check for anno
 if (ErrorLevel = 0)
 	click, %x% %y%
 
+imagesearch, x, y, 0, 0, winW, winH, *50 .\assets\bossrushok.png	; Check for team boss rush over popup
+if (ErrorLevel = 0)
+	click, %x% %y%
+
 UpdateStatus("equip_benjamin")						; Is benjamin equipped?
 imagesearch, x, y, 0, 0, winW, winH, *50 .\assets\benjaminequipped.png
 if (ErrorLevel = 1)	
