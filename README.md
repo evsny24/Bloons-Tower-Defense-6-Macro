@@ -12,7 +12,7 @@ This is a beginner-friendly, easy-to-use AutoHotkey macro program that automates
 <img width="25%" height="25%" alt="image" src="https://github.com/user-attachments/assets/75238343-6fa3-4931-a1cd-2de878f811a1" />
 
 
-* **Default Keybinds**: Ensure your in-game keybind settings are reset to default.
+* **Default Settings**: Ensure your in-game keybind settings are reset to default and auto-start is ON.
 * **Benjamin**: Must be unlocked.
 * **Maps**: At least one expert map must be unlocked. For maps on Impoppable difficulty, the Impoppable mode must be unlocked.
 
