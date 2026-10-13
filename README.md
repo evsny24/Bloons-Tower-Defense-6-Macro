@@ -8,6 +8,10 @@ This is a beginner-friendly, easy-to-use AutoHotkey macro program that automates
 * **Resolution**: 2560x1440
     * Some placements require pixel-perfect accuracy. If your monitor has a lower resolution, you can emulate it using the instructions provided in the report below.
 * **Fast Track Mode**: Must be enabled. This significantly accelerates the process and the script is not programmed to work without it.
+    *  Also, disable perks since some modifiers throw off the script.
+<img width="25%" height="25%" alt="image" src="https://github.com/user-attachments/assets/75238343-6fa3-4931-a1cd-2de878f811a1" />
+
+
 * **Default Keybinds**: Ensure your in-game keybind settings are reset to default.
 * **Benjamin**: Must be unlocked.
 * **Maps**: At least one expert map must be unlocked. For maps on Impoppable difficulty, the Impoppable mode must be unlocked.
@@ -21,7 +25,10 @@ This is a beginner-friendly, easy-to-use AutoHotkey macro program that automates
 ## Instructions
 1. Download the latest release from the column on the right and extract the ZIP folder.
 2. To modify settings, open the `config.ini` file in a text editor and follow the provided directions.
-3. Launch the game and navigate to the main menu.
+3. Launch the game and navigate to the main menu:
+
+<img width="50%" height="50%" alt="image" src="https://github.com/user-attachments/assets/4cf1c817-b6d9-4c6c-ad42-9c78ca3493de" />
+
 4. Run `Start_Script.ahk` from the main menu.
 5. **Stopping the Script**:
     * Press the `=` key to stop the map and main scripts.
