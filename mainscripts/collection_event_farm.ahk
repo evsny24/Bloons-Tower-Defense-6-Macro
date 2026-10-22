@@ -64,7 +64,7 @@ else
 
 UpdateStatus("find_bonus_indicator")				; Find bonus indicator
 loop 3 {
-	loop 6 {
+	loop 7 {
 		noTotemFound := true
 		eventPath := ".\assets\totem" . A_Index . ".png"
 		sleep 200
