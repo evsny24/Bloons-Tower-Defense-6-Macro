@@ -25,8 +25,9 @@ imagesearch, x, y, 0, 0, winW, winH, *50 .\assets\bossrushok.png	; Check for tea
 if (ErrorLevel = 0)
 	click, %x% %y%
 
-sleep 200
+sleep 500
 Click, 963, 28
+sleep 500
 
 UpdateStatus("equip_benjamin")						; Is benjamin equipped?
 imagesearch, x, y, 0, 0, winW, winH, *50 .\assets\benjaminequipped.png
